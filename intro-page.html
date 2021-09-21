@@ -1,313 +1,414 @@
 <style>
-.background {
-			position: fixed;
-			background:red;
-			top: 0px;
-			bottom: 0px;
-			left: 0px;
-			right:0px;
-		}
+    /* Html elements styles*/
+    .background {
+        position: fixed;
+        background: red;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+    }
 
-.floatbox {
-			position: absolute;
-			background: blue;
-			top: 12.25%;
-			bottom: 12.25%;
-			left: 25%;
-			right:25%;
-			min-width: 600px;
-			min-height: 400px;
-			border-radius: 15px;
-			box-shadow: 0px 0px 60px 5px #000000;
-		}
+    .floatbox {
+        position: absolute;
+        background: blue;
+        top: 25%;
+        bottom: 25%;
+        left: 25%;
+        right: 25%;
+        min-width: 600px;
+        height: 400px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 60px 5px #000000;
+    }
 
-.css-typing  {
-			position: absolute;
-			background:green;
-			top: 25px;
-			bottom: 25px;
-			left: 70px;
-			right: 25px;
-  			font-family: "Courier";
-  			white-space: nowrap;
-  			overflow: hidden;
-}
+    .content {
+        position: absolute;
+        background: ;
+        top: 25%;
+        bottom: 25%;
+        left: 25%;
+        right: 25%;
+        min-width: 600px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 60px 5px #000000;
+        font-family: "Courier";
+        animation: buttonsappear;
+        animation-delay: 10s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards
+    }
 
-.css-typing p {
-  border-right: .15em solid orange;
-  font-family: "Courier";
-  white-space: nowrap;
-  overflow: hidden;
-}
+    .nav-pills {
+        background: ;
+        position: absolute;
+        bottom: 43px;
+        width: 100%;
+        height: 43px;
+    }
 
-.css-typing p:nth-child(1) {
-width: 7.5em;  
-  -webkit-animation: type1 1s steps(40, end);
-  animation: type1 1s steps(40, end);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.css-typing p:nth-child(2) {
-width: 5em;  
-  opacity: 0;
-  -webkit-animation: type1 1s steps(40, end);
-  animation: type1 1s steps(40, end);
-  -webkit-animation-delay: 2s;
-  animation-delay: 1s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
+    .nav-item {
+        display: flex;
+        justify-content: space-around;
+    }
 
-.css-typing p:nth-child(3) {
-width: 16.75em;    
-  opacity: 0;
-  -webkit-animation: type1 2s steps(40, end);
-  animation: type1 2s steps(40, end);
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
+    .nav-pills .nav-link {
+        font-weight: bold;
+        padding-top: 13px;
+        text-align: center;
+        background: #343436;
+        color: #fff;
+        border-radius: 15px;
+        height: 43px;
+        width: 20%;
+    }
 
-.css-typing p:nth-child(4) {
-width: 20em;    
-  opacity: 0;
-  -webkit-animation: type1 2s steps(40, end);
-  animation: type1 2s steps(40, end);
-  -webkit-animation-delay: 2s;
-  animation-delay: 4s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
+    .nav-pills .nav-link.active {
+        background: #fff;
+        color: #000;
+    }
 
-.css-typing p:nth-child(5) {
-width: 13em;    
-  opacity: 0;
-  -webkit-animation: type1 2s steps(40, end);
-  animation: type1 2s steps(40, end);
-  -webkit-animation-delay: 2s;
-  animation-delay: 6s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
+    .tab-content {
+        background: yellow;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 43px;
 
-.css-typing p:nth-child(6) {
-width: 24.5em;    
-  opacity: 0;
-  -webkit-animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
-  animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
-  -webkit-animation-delay: 2s;
-  animation-delay: 8s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
+    }
 
-.numcol p:nth-child(1) {
-animation: appear;
-animation-duration: .15s;
-}
-
-.numcol p:nth-child(2) {
-animation: appear;
-animation-duration: 1s;
-}
-
-.numcol p:nth-child(3) {
-animation: appear;
-animation-duration: 2s;
-}
-
-.numcol p:nth-child(4) {
-animation: appear;
-animation-duration: 4s;
-}
-
-.numcol p:nth-child(5) {
-animation: appear;
-animation-duration: 6s;
-}
-
-.numcol p:nth-child(6) {
-animation: appear;
-animation-duration: 8s;
-}
+    .tab-content button {
+        border-radius: 15px;
+        width: 100px;
+        margin: 0 auto;
+        float: right;
+    }
 
 
-@keyframes type1 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }15s
-  99.9% {
-    border-right: .15em solid orange;
-  }
-  100% {
-    opacity: 1;
-    border: none;
-  }
-}
+    .css-typing {
+        position: absolute;
+        background: green;
+        top: 25px;
+        bottom: 25px;
+        left: 70px;
+        right: 25px;
+        font-family: "Courier";
+        white-space: nowrap;
+        overflow: hidden;
+    }
 
-@-webkit-keyframes type1 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  99.9% {
-    border-right: .15em solid orange;
-  }
-  100% {
-    opacity: 1;
-    border: none;
-  }
-}
-  transition-delay: 2s;
+    .css-typing p {
+        border-right: .15em solid orange;
+        font-family: "Courier";
+        white-space: nowrap;
+        overflow: hidden;
+    }
 
-@keyframes type2 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+    .css-typing p:nth-child(1) {
+        width: 7.5em;
+        -webkit-animation: type1 1s steps(40, end);
+        animation: type1 1s steps(40, end);
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
 
-@-webkit-keyframes type2 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+    .css-typing p:nth-child(2) {
+        width: 5em;
+        opacity: 0;
+        -webkit-animation: type1 1s steps(40, end);
+        animation: type1 1s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 1s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
 
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-@-webkit-keyframes blink {
-  50% {
-    border-color: tranparent;
-  }
-}
+    .css-typing p:nth-child(3) {
+        width: 16.75em;
+        opacity: 0;
+        -webkit-animation: type1 2s steps(40, end);
+        animation: type1 2s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
 
-@keyframes appear{
-0% {
-opacity: 0;
-}
-100% {
-opacity: 0;
-}
-}
+    .css-typing p:nth-child(4) {
+        width: 20em;
+        opacity: 0;
+        -webkit-animation: type1 2s steps(40, end);
+        animation: type1 2s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 4s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
 
-.numcol {
-border-right: 2px solid grey;
-position: absolute;
-			background:pink;
-			top: 25px;
-			bottom: 25px;
-			left: 25px;
-			
-width: 29px;
-  			font-family: "Courier";
-  			white-space: nowrap;
-  			overflow: hidden;
-}
+    .css-typing p:nth-child(5) {
+        width: 13em;
+        opacity: 0;
+        -webkit-animation: type1 2s steps(40, end);
+        animation: type1 2s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 6s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
 
-.bar {
-background:pink;
-position:absolute; bottom:0;
-height:43px;
-min-width: 600px;
-width:100%;
+    .css-typing p:nth-child(6) {
+        width: 24.5em;
+        opacity: 0;
+        -webkit-animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
+        animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
+        -webkit-animation-delay: 2s;
+        animation-delay: 8s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .numcol {
+        border-right: 2px solid grey;
+        position: absolute;
+        background: pink;
+        top: 25px;
+        bottom: 25px;
+        left: 25px;
+        width: 29px;
+        font-family: "Courier";
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .numcol p:nth-child(1) {
+        animation: appear;
+        animation-duration: .15s;
+    }
+
+    .numcol p:nth-child(2) {
+        animation: appear;
+        animation-duration: 1s;
+    }
+
+    .numcol p:nth-child(3) {
+        animation: appear;
+        animation-duration: 2s;
+    }
+
+    .numcol p:nth-child(4) {
+        animation: appear;
+        animation-duration: 4s;
+    }
+
+    .numcol p:nth-child(5) {
+        animation: appear;
+        animation-duration: 6s;
+    }
+
+    .numcol p:nth-child(6) {
+        animation: appear;
+        animation-duration: 8s;
+    }
 
 
 
-}
-.buttons {
-font-family: "Courier";
-display:flex;
-justify-content: space-around;
-}
+    .buttons {
+        font-family: "Courier";
+        display: flex;
+        justify-content: space-around;
+    }
 
-/* Style the header links */
-.buttons a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
-}
+    /* Style the header links */
+    .buttons a {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 4px;
+    }
+
+    /* Change the background color on mouse-over */
+    .buttons a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    /* Style the active/current link*/
+    .buttons a.active {
+        background-color: dodgerblue;
+        color: white;
+    }
+
+    /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+    @media screen and (max-width: 500px) {
+        .buttons a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+
+        .buttons-right {
+            float: none;
+        }
+    }
 
 
-}
+    @keyframes type1 {
+        0% {
+            width: 0;
+        }
 
-/* Change the background color on mouse-over */
-.buttons a:hover {
-  background-color: #ddd;
-  color: black;
-}
-/* Style the active/current link*/
-.buttons a.active {
-  background-color: dodgerblue;
-  color: white;
-}
+        1% {
+            opacity: 1;
+        }
 
-/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
-@media screen and (max-width: 500px) {
-  .buttons a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .buttons-right {
-    float: none;
-  }
-}
+        15s 99.9% {
+            border-right: .15em solid orange;
+        }
 
+        100% {
+            opacity: 1;
+            border: none;
+        }
+    }
+
+    @-webkit-keyframes type1 {
+        0% {
+            width: 0;
+        }
+
+        1% {
+            opacity: 1;
+        }
+
+        99.9% {
+            border-right: .15em solid orange;
+        }
+
+        100% {
+            opacity: 1;
+            border: none;
+        }
+    }
+
+    transition-delay: 2s;
+
+    @keyframes type2 {
+        0% {
+            width: 0;
+        }
+
+        1% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes type2 {
+        0% {
+            width: 0;
+        }
+
+        1% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+    @-webkit-keyframes blink {
+        50% {
+            border-color: tranparent;
+        }
+    }
+
+    @keyframes appear {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes buttonsappear {
+        0% {
+            height: 400px;
+        }
+
+        100% {
+            height: 486px;
+        }
+    }
 </style>
 
 <html>
 <div class="background">
-<div class="floatbox">
-<div class="numcol">
-<p>1</p>				
-						<p>2</p>
-						<p>3</p>
-						<p>4</p>
-						<p>5</p>
-						<p>6</p>
+    <div class="floatbox">
+        <div class="numcol">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+            <p>5</p>
+            <p>6</p>
+        </div>
+
+        <div class="css-typing">
+            <p>#introduction</p>
+            <p>hi there, </p>
+            <p>my name is cristian sotomayor</p>
+            <p>i am a software engineer located in</p>
+            <p>los angeles, california</p>
+            <p>thank you for visting my interactive</p>
+        </div>
+    </div>
+    <div class="content">
+        <!-- Nav pills -->
+        <div class="nav nav-pills" role="tablist">
+            <div class="nav-item">
+                <a class="nav-link" href="#home">home</a>
+                <a class="nav-link" href='#about'>about</a>
+                <button class="nav-link" data-toggle="pill" href="#projects">projects</button>
+                <button class="nav-link" data-toggle="pill" href="#skills">skills</button>
+                <button class="nav-link" data-toggle="pill" href="#contact">contact</button>
+            </div>
+        </div>
+
+
+        <div class="tab-content">
+            <div id="home" class="container tab-pane active">
+                <p>hello</p>
+            </div>
+            <div id="about" class="container tab-pane fade">
+                <p>hello</p>
+            </div>
+            <div id="projects" class="container tab-pane fade">
+                <p>hello</p>
+            </div>
+            <div id="skills" class="container tab-pane fade">
+                <p>hello</p>
+            </div>
+            <div id="contact" class="container tab-pane fade">
+                <p>hello</p>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="css-typing">
-<p>#introduction</p>
-						<p>hi there, </p>
-						<p>my name is cristian sotomayor</p>
-						<p>i am a software engineer located in</p>
-						<p>los angeles, california</p>
-						<p>thank you for visting my interactive</p>
-</div>
-<div class="bar">
-<div class="buttons">
-<a class="active" href="#home">home</a>
-<a href="#contact">about</a>
-<a href="#skills">skills</a>
-<a href="#projects">projects</a>
-<a href="#contact">contact</a>
-</div>
-</div>
-</div>
-</div>
+
 </html>
