@@ -1,4 +1,3 @@
-<style>
     /* Html elements styles*/
     .background {
         position: fixed;
@@ -8,6 +7,7 @@
         left: 0px;
         right: 0px;
     }
+
 
     .floatbox {
         position: absolute;
@@ -20,13 +20,14 @@
         height: 400px;
         border-radius: 15px;
         box-shadow: 0px 0px 60px 5px #000000;
+        z-index: 5;
     }
 
     .content {
         position: absolute;
-        background: ;
+        background: purple;
         top: 25%;
-        bottom: 25%;
+        height: 400px;
         left: 25%;
         right: 25%;
         min-width: 600px;
@@ -36,54 +37,10 @@
         animation: buttonsappear;
         animation-delay: 10s;
         animation-duration: 1s;
-        animation-fill-mode: forwards
-    }
-
-    .nav-pills {
-        background: ;
-        position: absolute;
-        bottom: 43px;
-        width: 100%;
-        height: 43px;
-    }
-
-    .nav-item {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .nav-pills .nav-link {
-        font-weight: bold;
-        padding-top: 13px;
-        text-align: center;
-        background: #343436;
-        color: #fff;
-        border-radius: 15px;
-        height: 43px;
-        width: 20%;
-    }
-
-    .nav-pills .nav-link.active {
-        background: #fff;
-        color: #000;
-    }
-
-    .tab-content {
-        background: yellow;
-        position: absolute;
-        bottom: 0px;
-        width: 100%;
-        height: 43px;
+        animation-fill-mode: forwards;
+        z-index: 3;
 
     }
-
-    .tab-content button {
-        border-radius: 15px;
-        width: 100px;
-        margin: 0 auto;
-        float: right;
-    }
-
 
     .css-typing {
         position: absolute;
@@ -355,6 +312,84 @@
             height: 486px;
         }
     }
+
+
+
+    .tabs {
+        background: red;
+        position: absolute;
+        bottom: 43px;
+        width: 100%;
+        height: 43px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .tabs::before,
+    .tabs::after {
+        content: "";
+        display: table;
+    }
+
+    .tabs::after {
+        clear: both;
+    }
+
+    .tab {
+        float: left;
+    }
+
+    .tab-switch {
+        display: none;
+    }
+
+    .tab-label {
+        position: relative;
+        display: block;
+        line-height: 2.75em;
+        height: 3em;
+        padding: 0 1.618em;
+        background: #1abc9c;
+        border-right: 0.125rem solid #16a085;
+        color: #fff;
+        cursor: pointer;
+        top: 0;
+        transition: all 0.25s;
+    }
+
+    .tab-label:hover {
+        top: -0.25rem;
+        transition: top 0.25s;
+    }
+
+    .tab-content {
+        height: ;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        top: ;
+        background: #fff;
+        color: #2c3e50;
+        border-bottom: 0.25rem solid #bdc3c7;
+        opacity: 0;
+        transition: all 0.35s;
+    }
+
+    .tab-switch:checked+.tab-label {
+        background: #fff;
+        color: #2c3e50;
+        border-bottom: 0;
+        border-right: 0.125rem solid #fff;
+        transition: all 0.35s;
+        z-index: 1;
+        top: -0.0625rem;
+    }
+
+    .tab-switch:checked+label+.tab-content {
+        z-index: 2;
+        opacity: 1;
+        transition: all 0.35s;
+    }
 </style>
 
 <html>
@@ -379,36 +414,34 @@
         </div>
     </div>
     <div class="content">
-        <!-- Nav pills -->
-        <div class="nav nav-pills" role="tablist">
-            <div class="nav-item">
-                <a class="nav-link" href="#home">home</a>
-                <a class="nav-link" href='#about'>about</a>
-                <button class="nav-link" data-toggle="pill" href="#projects">projects</button>
-                <button class="nav-link" data-toggle="pill" href="#skills">skills</button>
-                <button class="nav-link" data-toggle="pill" href="#contact">contact</button>
+        <div class="tabs">
+            <div class="tab">
+                <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+                <label for="tab-1" class="tab-label">home</label>
+                <div class="tab-content">My father had a </div>
             </div>
-        </div>
-
-
-        <div class="tab-content">
-            <div id="home" class="container tab-pane active">
-                <p>hello</p>
+            <div class="tab">
+                <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+                <label for="tab-2" class="tab-label">about</label>
+                <div class="tab-content">My o. </div>
             </div>
-            <div id="about" class="container tab-pane fade">
-                <p>hello</p>
+            <div class="tab">
+                <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+                <label for="tab-3" class="tab-label">projects</label>
+                <div class="tab-content">When I left Mr. Bates, .</div>
             </div>
-            <div id="projects" class="container tab-pane fade">
-                <p>hello</p>
+            <div class="tab">
+                <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
+                <label for="tab-4" class="tab-label">skills</label>
+                <div class="tab-content">contact.</div>
             </div>
-            <div id="skills" class="container tab-pane fade">
-                <p>hello</p>
-            </div>
-            <div id="contact" class="container tab-pane fade">
-                <p>hello</p>
+            <div class="tab">
+                <input type="radio" name="css-tabs" id="tab-5" class="tab-switch">
+                <label for="tab-5" class="tab-label">contact</label>
+                <div class="tab-content">When I left Mr. Bates, .</div>
             </div>
         </div>
     </div>
 </div>
 
-</html>
+</html>https://liveweave.com/
