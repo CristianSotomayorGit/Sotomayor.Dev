@@ -1,448 +1,448 @@
-    <style>
-    /* Html elements styles*/
-    .background {
-        position: fixed;
-        background: red;
-        top: 0px;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-    }
-
-
-    .floatbox {
-        position: absolute;
-        background: blue;
-        top: 25%;
-        bottom: 25%;
-        left: 25%;
-        right: 25%;
-        min-width: 600px;
-        height: 400px;
-        border-radius: 15px;
-        box-shadow: 0px 0px 60px 5px #000000;
-        z-index: 5;
-    }
-
-    .content {
-        position: absolute;
-        background: purple;
-        top: 25%;
-        height: 400px;
-        left: 25%;
-        right: 25%;
-        min-width: 600px;
-        border-radius: 15px;
-        box-shadow: 0px 0px 60px 5px #000000;
-        font-family: "Courier";
-        animation: buttonsappear;
-        animation-delay: 10s;
-        animation-duration: 1s;
-        animation-fill-mode: forwards;
-        z-index: 3;
-
-    }
-
-    .css-typing {
-        position: absolute;
-        background: green;
-        top: 25px;
-        bottom: 25px;
-        left: 70px;
-        right: 25px;
-        font-family: "Courier";
-        white-space: nowrap;
-        overflow: hidden;
-    }
-
-    .css-typing p {
-        border-right: .15em solid orange;
-        font-family: "Courier";
-        white-space: nowrap;
-        overflow: hidden;
-    }
-
-    .css-typing p:nth-child(1) {
-        width: 7.5em;
-        -webkit-animation: type1 1s steps(40, end);
-        animation: type1 1s steps(40, end);
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-    }
-
-    .css-typing p:nth-child(2) {
-        width: 5em;
-        opacity: 0;
-        -webkit-animation: type1 1s steps(40, end);
-        animation: type1 1s steps(40, end);
-        -webkit-animation-delay: 2s;
-        animation-delay: 1s;
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-    }
-
-    .css-typing p:nth-child(3) {
-        width: 16.75em;
-        opacity: 0;
-        -webkit-animation: type1 2s steps(40, end);
-        animation: type1 2s steps(40, end);
-        -webkit-animation-delay: 2s;
-        animation-delay: 2s;
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-    }
-
-    .css-typing p:nth-child(4) {
-        width: 20em;
-        opacity: 0;
-        -webkit-animation: type1 2s steps(40, end);
-        animation: type1 2s steps(40, end);
-        -webkit-animation-delay: 2s;
-        animation-delay: 4s;
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-    }
-
-    .css-typing p:nth-child(5) {
-        width: 13em;
-        opacity: 0;
-        -webkit-animation: type1 2s steps(40, end);
-        animation: type1 2s steps(40, end);
-        -webkit-animation-delay: 2s;
-        animation-delay: 6s;
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-    }
-
-    .css-typing p:nth-child(6) {
-        width: 24.5em;
-        opacity: 0;
-        -webkit-animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
-        animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
-        -webkit-animation-delay: 2s;
-        animation-delay: 8s;
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-    }
-
-    .numcol {
-        border-right: 2px solid grey;
-        position: absolute;
-        background: pink;
-        top: 25px;
-        bottom: 25px;
-        left: 25px;
-        width: 29px;
-        font-family: "Courier";
-        white-space: nowrap;
-        overflow: hidden;
-    }
-
-    .numcol p:nth-child(1) {
-        animation: appear;
-        animation-duration: .15s;
-    }
-
-    .numcol p:nth-child(2) {
-        animation: appear;
-        animation-duration: 1s;
-    }
-
-    .numcol p:nth-child(3) {
-        animation: appear;
-        animation-duration: 2s;
-    }
-
-    .numcol p:nth-child(4) {
-        animation: appear;
-        animation-duration: 4s;
-    }
-
-    .numcol p:nth-child(5) {
-        animation: appear;
-        animation-duration: 6s;
-    }
-
-    .numcol p:nth-child(6) {
-        animation: appear;
-        animation-duration: 8s;
-    }
-
-
-
-    .buttons {
-        font-family: "Courier";
-        display: flex;
-        justify-content: space-around;
-    }
-
-    /* Style the header links */
-    .buttons a {
-        float: left;
-        color: black;
-        text-align: center;
-        padding: 12px;
-        text-decoration: none;
-        font-size: 18px;
-        line-height: 25px;
-        border-radius: 4px;
-    }
-
-    /* Change the background color on mouse-over */
-    .buttons a:hover {
-        background-color: #ddd;
-        color: black;
-    }
-
-    /* Style the active/current link*/
-    .buttons a.active {
-        background-color: dodgerblue;
-        color: white;
-    }
-
-    /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
-    @media screen and (max-width: 500px) {
-        .buttons a {
-            float: none;
-            display: block;
-            text-align: left;
+<style>
+        /* Html elements styles*/
+        .background {
+            position: fixed;
+            background: red;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
         }
 
-        .buttons-right {
-            float: none;
-        }
-    }
 
-
-    @keyframes type1 {
-        0% {
-            width: 0;
-        }
-
-        1% {
-            opacity: 1;
-        }
-
-        15s 99.9% {
-            border-right: .15em solid orange;
-        }
-
-        100% {
-            opacity: 1;
-            border: none;
-        }
-    }
-
-    @-webkit-keyframes type1 {
-        0% {
-            width: 0;
-        }
-
-        1% {
-            opacity: 1;
-        }
-
-        99.9% {
-            border-right: .15em solid orange;
-        }
-
-        100% {
-            opacity: 1;
-            border: none;
-        }
-    }
-
-    transition-delay: 2s;
-
-    @keyframes type2 {
-        0% {
-            width: 0;
-        }
-
-        1% {
-            opacity: 1;
-        }
-
-        100% {
-            opacity: 1;
-        }
-    }
-
-    @-webkit-keyframes type2 {
-        0% {
-            width: 0;
-        }
-
-        1% {
-            opacity: 1;
-        }
-
-        100% {
-            opacity: 1;
-        }
-    }
-
-    @keyframes blink {
-        50% {
-            border-color: transparent;
-        }
-    }
-
-    @-webkit-keyframes blink {
-        50% {
-            border-color: tranparent;
-        }
-    }
-
-    @keyframes appear {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 0;
-        }
-    }
-
-    @keyframes buttonsappear {
-        0% {
+        .floatbox {
+            position: absolute;
+            background: blue;
+            top: 25%;
+            bottom: 25%;
+            left: 25%;
+            right: 25%;
+            min-width: 600px;
             height: 400px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 60px 5px #000000;
+            z-index: 5;
         }
 
-        100% {
-            height: 486px;
+        .wrapper {
+            position: absolute;
+            background: ;
+            top: 25%;
+            left: 25%;
+            right: 25%;
+            min-width: 600px;
+            height: 400px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 60px 5px #000000;
+            z-index: 0;
+            font-family: "Courier";
         }
-    }
+
+        .css-typing {
+            position: absolute;
+            background: green;
+            top: 25px;
+            bottom: 25px;
+            left: 70px;
+            right: 25px;
+            font-family: "Courier";
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .css-typing p {
+            border-right: .15em solid orange;
+            font-family: "Courier";
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .css-typing p:nth-child(1) {
+            width: 7.5em;
+            -webkit-animation: type1 1s steps(40, end);
+            animation: type1 1s steps(40, end);
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+
+        .css-typing p:nth-child(2) {
+            width: 5em;
+            opacity: 0;
+            -webkit-animation: type1 1s steps(40, end);
+            animation: type1 1s steps(40, end);
+            -webkit-animation-delay: 2s;
+            animation-delay: 1s;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+
+        .css-typing p:nth-child(3) {
+            width: 16.75em;
+            opacity: 0;
+            -webkit-animation: type1 2s steps(40, end);
+            animation: type1 2s steps(40, end);
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+
+        .css-typing p:nth-child(4) {
+            width: 20em;
+            opacity: 0;
+            -webkit-animation: type1 2s steps(40, end);
+            animation: type1 2s steps(40, end);
+            -webkit-animation-delay: 2s;
+            animation-delay: 4s;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+
+        .css-typing p:nth-child(5) {
+            width: 13em;
+            opacity: 0;
+            -webkit-animation: type1 2s steps(40, end);
+            animation: type1 2s steps(40, end);
+            -webkit-animation-delay: 2s;
+            animation-delay: 6s;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+
+        .css-typing p:nth-child(6) {
+            width: 24.5em;
+            opacity: 0;
+            -webkit-animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
+            animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
+            -webkit-animation-delay: 2s;
+            animation-delay: 8s;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+
+        .numcol {
+            border-right: 2px solid grey;
+            position: absolute;
+            background: pink;
+            top: 25px;
+            bottom: 25px;
+            left: 25px;
+            width: 29px;
+            font-family: "Courier";
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .numcol p:nth-child(1) {
+            animation: appear;
+            animation-duration: .15s;
+        }
+
+        .numcol p:nth-child(2) {
+            animation: appear;
+            animation-duration: 1s;
+        }
+
+        .numcol p:nth-child(3) {
+            animation: appear;
+            animation-duration: 2s;
+        }
+
+        .numcol p:nth-child(4) {
+            animation: appear;
+            animation-duration: 4s;
+        }
+
+        .numcol p:nth-child(5) {
+            animation: appear;
+            animation-duration: 6s;
+        }
+
+        .numcol p:nth-child(6) {
+            animation: appear;
+            animation-duration: 8s;
+        }
 
 
 
-    .tabs {
-        background: red;
-        position: absolute;
-        bottom: 43px;
-        width: 100%;
-        height: 43px;
-        display: flex;
-        justify-content: space-around;
-    }
+        .buttons {
+            font-family: "Courier";
+            display: flex;
+            justify-content: space-around;
+        }
 
-    .tabs::before,
-    .tabs::after {
-        content: "";
-        display: table;
-    }
+        /* Style the header links */
+        .buttons a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 25px;
+            border-radius: 4px;
+        }
 
-    .tabs::after {
-        clear: both;
-    }
+        /* Change the background color on mouse-over */
+        .buttons a:hover {
+            background-color: #ddd;
+            color: black;
+        }
 
-    .tab {
-        float: left;
-    }
+        /* Style the active/current link*/
+        .buttons a.active {
+            background-color: dodgerblue;
+            color: white;
+        }
 
-    .tab-switch {
-        display: none;
-    }
+        /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+        @media screen and (max-width: 500px) {
+            .buttons a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
 
-    .tab-label {
-        position: relative;
-        display: block;
-        line-height: 2.75em;
-        height: 3em;
-        padding: 0 1.618em;
-        background: #1abc9c;
-        border-right: 0.125rem solid #16a085;
-        color: #fff;
-        cursor: pointer;
-        top: 0;
-        transition: all 0.25s;
-    }
+            .buttons-right {
+                float: none;
+            }
+        }
 
-    .tab-label:hover {
-        top: -0.25rem;
-        transition: top 0.25s;
-    }
 
-    .tab-content {
-        height: ;
-        position: relative;
-        width: 100%;
-        z-index: 1;
-        top: ;
-        background: #fff;
-        color: #2c3e50;
-        border-bottom: 0.25rem solid #bdc3c7;
-        opacity: 0;
-        transition: all 0.35s;
-    }
+        @keyframes type1 {
+            0% {
+                width: 0;
+            }
 
-    .tab-switch:checked+.tab-label {
-        background: #fff;
-        color: #2c3e50;
-        border-bottom: 0;
-        border-right: 0.125rem solid #fff;
-        transition: all 0.35s;
-        z-index: 1;
-        top: -0.0625rem;
-    }
+            1% {
+                opacity: 1;
+            }
 
-    .tab-switch:checked+label+.tab-content {
-        z-index: 2;
-        opacity: 1;
-        transition: all 0.35s;
-    }
-</style>
+            15s 99.9% {
+                border-right: .15em solid orange;
+            }
 
-<html>
-<div class="background">
-    <div class="floatbox">
-        <div class="numcol">
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
-            <p>4</p>
-            <p>5</p>
-            <p>6</p>
+            100% {
+                opacity: 1;
+                border: none;
+            }
+        }
+
+        @-webkit-keyframes type1 {
+            0% {
+                width: 0;
+            }
+
+            1% {
+                opacity: 1;
+            }
+
+            99.9% {
+                border-right: .15em solid orange;
+            }
+
+            100% {
+                opacity: 1;
+                border: none;
+            }
+        }
+
+        transition-delay: 2s;
+
+        @keyframes type2 {
+            0% {
+                width: 0;
+            }
+
+            1% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes type2 {
+            0% {
+                width: 0;
+            }
+
+            1% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        @-webkit-keyframes blink {
+            50% {
+                border-color: tranparent;
+            }
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes buttonsappear {
+            0% {
+                top: 300px;
+            }
+
+            100% {
+                top: 350px;
+            }
+        }
+
+
+
+        .tabs {
+            top: 300px;
+            position: relative;
+            margin: 3rem 0;
+            background: #1abc9c;
+            height: ;
+            display: flex;
+            justify-content: space-around;
+            animation: buttonsappear;
+            animation-delay: 10s;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        .tabs::before,
+        .tabs::after {
+            content: "";
+            display: table;
+        }
+
+        .tabs::after {
+            clear: both;
+        }
+
+        .tab {
+            float: left;
+        }
+
+        .tab-switch {
+            display: none;
+        }
+
+        .tab-label {
+            position: relative;
+            display: block;
+            line-height: 2.75em;
+            height: 3em;
+            padding: 0 1.618em;
+            background: #1abc9c;
+            border-right: 0.125rem solid #16a085;
+            color: #fff;
+            cursor: pointer;
+            top: 0;
+            transition: all 0.25s;
+        }
+
+        .tab-label:hover {
+            top: -0.25rem;
+            transition: top 0.25s;
+        }
+
+        .tab-content {
+            height: 12rem;
+            position: absolute;
+            z-index: 1;
+            top: 2.75em;
+            left: 0;
+            padding: 1.618rem;
+            background: #fff;
+            color: #2c3e50;
+            border-bottom: 0.25rem solid #bdc3c7;
+            opacity: 0;
+            transition: all 0.35s;
+        }
+
+        .tab-switch:checked+.tab-label {
+            background: #fff;
+            color: #2c3e50;
+            border-bottom: 0;
+            border-right: 0.125rem solid #fff;
+            transition: all 0.35s;
+            z-index: 1;
+            top: -0.0625rem;
+        }
+
+        .tab-switch:checked+label+.tab-content {
+            z-index: 2;
+            opacity: 1;
+            transition: all 0.35s;
+        }
+    </style>
+
+    <html>
+    <div class="background">
+        <div class="floatbox">
+            <div class="numcol">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+                <p>5</p>
+                <p>6</p>
+            </div>
+
+            <div class="css-typing">
+                <p>#introduction</p>
+                <p>hi there, </p>
+                <p>my name is cristian sotomayor</p>
+                <p>i am a software engineer located in</p>
+                <p>los angeles, california</p>
+                <p>thank you for visting my interactive</p>
+            </div>
         </div>
+        <div class="wrapper">
+            <div class="tabs">
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+                    <label for="tab-1" class="tab-label">home</label>
 
-        <div class="css-typing">
-            <p>#introduction</p>
-            <p>hi there, </p>
-            <p>my name is cristian sotomayor</p>
-            <p>i am a software engineer located in</p>
-            <p>los angeles, california</p>
-            <p>thank you for visting my interactive</p>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+                    <label for="tab-2" class="tab-label">about</label>
+                    <div class="tab-content">My o. </div>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+                    <label for="tab-3" class="tab-label">projects</label>
+                    <div class="tab-content">When I left Mr. Bates, .</div>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
+                    <label for="tab-4" class="tab-label">skills</label>
+                    <div class="tab-content">contact.</div>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-5" class="tab-switch">
+                    <label for="tab-5" class="tab-label">contact</label>
+                    <div class="tab-content">When I left Mr. Bates, .</div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="content">
-        <div class="tabs">
-            <div class="tab">
-                <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
-                <label for="tab-1" class="tab-label">home</label>
-                <div class="tab-content">My father had a </div>
-            </div>
-            <div class="tab">
-                <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
-                <label for="tab-2" class="tab-label">about</label>
-                <div class="tab-content">My o. </div>
-            </div>
-            <div class="tab">
-                <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
-                <label for="tab-3" class="tab-label">projects</label>
-                <div class="tab-content">When I left Mr. Bates, .</div>
-            </div>
-            <div class="tab">
-                <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
-                <label for="tab-4" class="tab-label">skills</label>
-                <div class="tab-content">contact.</div>
-            </div>
-            <div class="tab">
-                <input type="radio" name="css-tabs" id="tab-5" class="tab-switch">
-                <label for="tab-5" class="tab-label">contact</label>
-                <div class="tab-content">When I left Mr. Bates, .</div>
-            </div>
-        </div>
-    </div>
-</div>
 
-</html>
+    </html>
