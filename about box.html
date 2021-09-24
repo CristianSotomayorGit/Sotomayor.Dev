@@ -1,0 +1,518 @@
+<style>
+    /* Html elements styles*/
+    .background {
+        position: fixed;
+        background: red;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+    }
+
+
+    .floatbox {
+        position: absolute;
+        background: blue;
+        bottom: 25%;
+        left: 25%;
+        right: 25%;
+        top:25%;
+        min-width: 600px;
+        border-radius: 8px;
+        box-shado: 0px 0px 60px 5px #000000;
+        z-index: 5;
+    	animation: windowsopentop;
+    	animation-delay: 10s;
+    	animation-duration: 1s;
+    	animation-fill-mode: forwards;
+    
+    }
+
+	.about {
+		background: ;
+		position: relative;
+		height:100%;
+		padding:25px;
+		left: 50%;
+		z-index: 10;
+		
+	}
+    .css-typing {
+        position: absolute;
+        background: green;
+        top: 25px;
+        bottom: 25px;
+        left: 70px;
+        right: 25px;
+        font-family: "Courier";
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .css-typing p {
+        border-right: .15em solid orange;
+        font-family: "Courier";
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .css-typing p:nth-child(1) {
+        width: 7.5em;
+        -webkit-animation: type1 1s steps(40, end);
+        animation: type1 1s steps(40, end);
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .css-typing p:nth-child(2) {
+        width: 5em;
+        opacity: 0;
+        -webkit-animation: type1 1s steps(40, end);
+        animation: type1 1s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 1s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .css-typing p:nth-child(3) {
+        width: 16.75em;
+        opacity: 0;
+        -webkit-animation: type1 2s steps(40, end);
+        animation: type1 2s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .css-typing p:nth-child(4) {
+        width: 20em;
+        opacity: 0;
+        -webkit-animation: type1 2s steps(40, end);
+        animation: type1 2s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 4s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .css-typing p:nth-child(5) {
+        width: 13em;
+        opacity: 0;
+        -webkit-animation: type1 2s steps(40, end);
+        animation: type1 2s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 6s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .css-typing p:nth-child(6) {
+        width: 24.5em;
+        opacity: 0;
+        -webkit-animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
+        animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
+        -webkit-animation-delay: 2s;
+        animation-delay: 8s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .numcol {
+        border-right: 2px solid grey;
+        position: absolute;
+        background: pink;
+        top: 25px;
+        bottom: 25px;
+        left: 25px;
+        width: 29px;
+        font-family: "Courier";
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .numcol p:nth-child(1) {
+        animation: appear;
+        animation-duration: .15s;
+    }
+
+    .numcol p:nth-child(2) {
+        animation: appear;
+        animation-duration: 1s;
+    }
+
+    .numcol p:nth-child(3) {
+        animation: appear;
+        animation-duration: 2s;
+    }
+
+    .numcol p:nth-child(4) {
+        animation: appear;
+        animation-duration: 4s;
+    }
+
+    .numcol p:nth-child(5) {
+        animation: appear;
+        animation-duration: 6s;
+    }
+
+    .numcol p:nth-child(6) {
+        animation: appear;
+        animation-duration: 8s;
+    }
+
+
+
+    }
+
+    @keyframes type1 {
+        0% {
+            width: 0;
+        }
+
+        1% {
+            opacity: 1;
+        }
+
+        15s 99.9% {
+            border-right: .15em solid orange;
+        }
+
+        100% {
+            opacity: 1;
+            border: none;
+        }
+        }
+
+    @-webkit-keyframes type1 {
+        0% {
+            width: 0;
+        }
+
+        1% {
+            opacity: 1;
+        }
+
+        99.9% {
+            border-right: .15em solid orange;
+        }
+
+        100% {
+            opacity: 1;
+            border: none;
+        }
+    }
+
+    transition-delay: 2s;
+
+    @keyframes type2 {
+        0% {
+            width: 0;
+        }
+
+        1% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes type2 {
+        0% {
+            width: 0;
+        }
+
+        1% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+    @-webkit-keyframes blink {
+        50% {
+            border-color: tranparent;
+        }
+    }
+
+    @keyframes appear {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes buttonsappear {
+        0% {
+            top: 25%;
+            bottom: 25%;
+        }
+
+        100% {
+            top: 50%;
+            bottom: 6%;
+        }
+    }
+  
+  @keyframes windowsopentop {
+        0% {
+      bottom: 25%;
+      top: 25%;
+        }
+
+        100% {
+      bottom: 50%;
+      top: 6%
+        }
+    }
+
+  p {
+    margin: 0 0 15px;
+    line-height: 24px;
+    color: gainsboro;
+}
+
+a {
+    color: dodgerblue;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+
+a:hover {
+    color: tomato;
+}
+
+.container {
+    position: absolute;
+    width: 960px;
+    height: 400px;
+    top: ;
+    bottom: 0;
+    right: 25%;
+    left: 25%;
+    background: black;
+    
+    z-index: 0;
+}
+
+/* ------------------- */
+/* PEN STYLES      -- */
+/* ----------------- */
+
+/* MAKE IT CUTE ----- */
+.tabs {
+    min-width:  600px;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    bottom:25%;
+    position: absolute;
+    display: flex;
+    min-height: 300px;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    animation: buttonsappear;
+    animation-delay: 10s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    font-family: courier;
+}
+
+.tabby-tab {
+    flex: 1;
+}
+
+.tabby-tab label {
+    display: block;
+    box-sizing: border-box;
+    /* tab content must clear this */
+    height: 40px;
+
+    padding: 10px;
+    text-align: center;
+    background: #9768D1;
+    cursor: pointer;
+    transition: background 0.5s ease;
+
+}
+
+.tabby-tab label:hover {
+    background: #7B52AB;
+}
+
+.tabby-content {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* clear the tab labels */
+    top: 40px;
+
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    background: #553285;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+  
+    /* show/hide */
+    opacity: 0;
+    transform: scale(0.1);
+    transform-origin: top left;
+
+}
+
+.tabby-content-about {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* clear the tab labels */
+    top: 40px;
+
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    background: #553285;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+  
+    /* show/hide */
+    opacity: 0;
+    transform: scale(0.1);
+    transform-origin: top left;
+
+}
+
+	
+/* MAKE IT WORK ----- */
+
+.tabby-tab [type=radio] {
+    display: none;
+}
+
+[type=radio]:checked~label {
+    background: #553285;
+    z-index: 2;
+}
+
+[type=radio]:checked~label~.tabby-content {
+    z-index: 1;
+
+    /* show/hide */
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* BREAKPOINTS ----- */
+@media screen and (max-width: 767px) {
+    .tabs {
+        min-height: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tabs {
+        min-height: 580px;
+    }
+
+    .tabby-tab label {
+        height: 60px;
+    }
+
+    .tabby-content {
+        top: 60px;
+    }
+}
+  
+</style>
+
+<html>
+	<div class="background">
+    	<div class="floatbox">
+			<div class="about">
+				<p>Name:Cristian Sotomayor</p>
+			</div>
+			
+        	<div class="numcol">
+            	<p>1</p>
+            	<p>2</p>
+            	<p>3</p>
+            	<p>4</p>
+            	<p>5</p>
+            	<p>6</p>
+        	</div>
+
+        	<div class="css-typing">
+            	<p>#introduction</p>
+            	<p>hi there, </p>
+            	<p>my name is cristian sotomayor</p>
+            	<p>i am a software engineer located in</p>
+            	<p>los angeles, california</p>
+            	<p>thank you for visting my interactive</p>
+        	</div>
+			
+    	</div>
+
+        <div class="tabs">
+            <div class="tabby-tab">
+                <input type="radio" id="tab-1" name="tabby-tabs" checked>
+                <label for="tab-1">about</label>
+                <div class="tabby-content">
+                    <p>Purr while eating meowing non stop for food or chase laser sleep on dog bed, force dog to sleep on floor, so play riveting piece on synthesizer keyboard hiss at vacuum cleaner. Stares at human while pushing stuff off a table spot something, big eyes, big eyes, crouch, shake butt, prepare to pounce so refuse to leave cardboard box.</p>
+                </div>
+            </div>
+
+            <div class="tabby-tab">
+                <input type="radio" id="tab-2" name="tabby-tabs">
+                <label for="tab-2">projects</label>
+                <div class="tabby-content-about">
+                    <p>Cats go for world domination if it fits, i sits, meowwww but claw drapes, or sleep in the bathroom sink. Missing until dinner time under the bed, or eat from dog's food hide from vacuum cleaner kick up litter but lie on your belly and purr when you are asleep.</p>
+                </div>
+            </div>
+
+            <div class="tabby-tab">
+                <input type="radio" id="tab-3" name="tabby-tabs">
+                <label for="tab-3">coding challenges</label>
+                <div class="tabby-content">
+                    <p>Th</p>
+                </div>
+            </div>
+
+            <div class="tabby-tab">
+                <input type="radio" id="tab-4" name="tabby-tabs">
+                <label for="tab-4">####</label>
+                <div class="tabby-content">
+                    <p>Use .</p>
+                </div>
+            </div>
+
+            <div class="tabby-tab">
+                <input type="radio" id="tab-5" name="tabby-tabs">
+                <label for="tab-5">contact</label>
+                <div class="tabby-content">
+                    <p>Use .</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</html>
