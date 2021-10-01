@@ -2,7 +2,7 @@
     /* Html elements styles*/
     .background {
         position: fixed;
-        background: red;
+        background: #001E57;
         top: 0px;
         bottom: 0px;
         left: 0px;
@@ -12,26 +12,51 @@
 
     .floatbox {
         position: absolute;
-        background: blue;
+        background: #553285;
         bottom: 25%;
         left: 25%;
         right: 25%;
         top:25%;
         min-width: 600px;
-    
         border-radius: 8px;
-        box-shadow: 0px 0px 60px 5px #000000;
+        box-shado: 0px 0px 60px 5px #000000;
         z-index: 5;
-    animation: windowsopentop;
-    animation-delay: 10s;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+    	animation: windowsopentop;
+    	animation-delay: 11s;
+    	animation-duration: 1s;
+    	animation-fill-mode: forwards;
     
     }
-
+	
+	.about-box {
+		font-family: courier;
+	    opacity: 0;
+		position: relative;
+        background: #553285;
+		height:100%;
+		width:100%;
+        border-radius: 8px;
+        box-shado: 0px 0px 60px 5px #000000;
+        z-index: 5;
+		animation: aboutappear;
+    	animation-delay: 11.25s;
+    	animation-duration: 1s;
+    	animation-fill-mode: forwards;
+	}
+	
+	.about-text {
+		background:;
+		position: absolute;
+		top: 25px;
+        bottom: 25px;
+        right: 25px;
+		left: 50%;
+		z-index: 10;
+		
+	}
     .css-typing {
         position: absolute;
-        background: green;
+        background:;
         top: 25px;
         bottom: 25px;
         left: 70px;
@@ -114,7 +139,7 @@
     .numcol {
         border-right: 2px solid grey;
         position: absolute;
-        background: pink;
+        background: ;
         top: 25px;
         bottom: 25px;
         left: 25px;
@@ -256,19 +281,28 @@
 
         100% {
             top: 50%;
-            bottom: 12.25%;
+            bottom: 6%;
         }
     }
   
   @keyframes windowsopentop {
         0% {
-      bottom: 25%;
+     		 bottom: 25%;
       top: 25%;
         }
 
         100% {
       bottom: 50%;
-      top: 12.25%
+      top: 6%
+        }
+    }
+	
+  @keyframes aboutappear {
+        0% {
+      opacity: 0%;
+        }
+        100% {
+      opacity: 100%;
         }
     }
 
@@ -318,7 +352,7 @@ a:hover {
     border-radius: 8px 8px 0 0;
     overflow: hidden;
     animation: buttonsappear;
-    animation-delay: 10s;
+    animation-delay: 11s;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     font-family: courier;
@@ -366,17 +400,35 @@ a:hover {
     /* show/hide */
     opacity: 0;
     transform: scale(0.1);
-    transform-origin: top left
+    transform-origin: top left;
 
 }
 
-.tabby-content img {
-    float: left;
-    margin-right: 20px;
-    border-radius: 8px;
+.tabby-content-about {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* clear the tab labels */
+    top: 40px;
+
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    background: #553285;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+  
+    /* show/hide */
+    opacity: 0;
+    transform: scale(0.1);
+    transform-origin: top left;
+
 }
 
-
+	
 /* MAKE IT WORK ----- */
 
 .tabby-tab [type=radio] {
@@ -420,71 +472,69 @@ a:hover {
 </style>
 
 <html>
-<div class="background">
-    <div class="floatbox">
-        <div class="numcol">
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
-            <p>4</p>
-            <p>5</p>
-            <p>6</p>
-        </div>
+	<div class="background">
+    	<div class="floatbox">
+			<div class= "about-box">
+				<div class="about-text">
+					<p>Name: Cristian Sotomayor</p>
+					<p>Location: Los Angeles, CA</p>
+					<p>Hi, there! I am a computer science graduate and a software engineer with over one year and a half of professional experience developing databases with MySQL and Python scripting. <br><br> I also have two years of experience as a hobbyist with web development tools like HTML, CSS and Javascript. As well as C++ in plug-in development for CAD applications.</p>
+				</div>
+			</div>
+			
+        	<div class="numcol">
+            	<p>1</p>
+            	<p>2</p>
+            	<p>3</p>
+            	<p>4</p>
+            	<p>5</p>
+            	<p>6</p>
+        	</div>
 
-        <div class="css-typing">
-            <p>#introduction</p>
-            <p>hi there, </p>
-            <p>my name is cristian sotomayor</p>
-            <p>i am a software engineer located in</p>
-            <p>los angeles, california</p>
-            <p>thank you for visting my interactive</p>
-        </div>
-    </div>
-
+        	<div class="css-typing">
+            	<p>#introduction</p>
+            	<p>Hi there,</p>
+            	<p>My name is Cristian Sotomayor</p>
+            	<p>I am a software engineer located in</p>
+            	<p>los angeles, california</p>
+            	<p>thank you for visting my interactive portfolio.</p>
+        	</div>
+			
+    	</div>
 
         <div class="tabs">
             <div class="tabby-tab">
                 <input type="radio" id="tab-1" name="tabby-tabs" checked>
-                <label for="tab-1">home</label>
+                <label for="tab-1">Projects</label>
                 <div class="tabby-content">
-                    <p>Purr while eating meowing non stop for food or chase laser sleep on dog bed, force dog to sleep on floor, so play riveting piece on synthesizer keyboard hiss at vacuum cleaner. Stares at human while pushing stuff off a table spot something, big eyes, big eyes, crouch, shake butt, prepare to pounce so refuse to leave cardboard box.</p>
+                    <p>All my Projects are in the process of being uploaded! :)</p>
                 </div>
             </div>
 
             <div class="tabby-tab">
                 <input type="radio" id="tab-2" name="tabby-tabs">
-                <label for="tab-2">about</label>
+                <label for="tab-2">Coding Challenges</label>
                 <div class="tabby-content">
-                    <p>Cats go for world domination if it fits, i sits, meowwww but claw drapes, or sleep in the bathroom sink. Missing until dinner time under the bed, or eat from dog's food hide from vacuum cleaner kick up litter but lie on your belly and purr when you are asleep.</p>
+                    <p>All my Projects are in the process of being uploaded! :)</p>
                 </div>
             </div>
 
             <div class="tabby-tab">
                 <input type="radio" id="tab-3" name="tabby-tabs">
-                <label for="tab-3">projects</label>
+                <label for="tab-3">####</label>
                 <div class="tabby-content">
-                    <p>Th</p>
+                    <p>Filler.</p>
                 </div>
             </div>
 
             <div class="tabby-tab">
                 <input type="radio" id="tab-4" name="tabby-tabs">
-                <label for="tab-4">coding challenges</label>
+                <label for="tab-4">Contact</label>
                 <div class="tabby-content">
-                    <p>Use .</p>
+                    <p>Filler.</p>
                 </div>
             </div>
-
-            <div class="tabby-tab">
-                <input type="radio" id="tab-5" name="tabby-tabs">
-                <label for="tab-5">contact</label>
-                <div class="tabby-content">
-                    <p>Use .</p>
-                </div>
-            </div>
-
+			
         </div>
     </div>
-
-
 </html>
