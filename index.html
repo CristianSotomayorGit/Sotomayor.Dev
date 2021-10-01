@@ -85,6 +85,13 @@
         opacity: 0%;
     }
 
+
+    .grow {
+        top: 6%;
+        bottom: 6%;
+        z-index:15;
+    }
+
     .about-text {
         background: ;
         position: absolute;
@@ -138,6 +145,16 @@
         margin: 4px 2px;
         cursor: pointer;
         background-color: #E904FF;
+    }
+
+    .expandbtn {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
     }
 
     .css-typing {
@@ -553,6 +570,7 @@
             <label for="tab-1">Projects</label>
             <div class="tabby-content">
                 <p>All my Projects are in the process of being uploaded! :)</p>
+                <button class="expandbtn" id="expand" class="">expand^</button>
             </div>
         </div>
 
@@ -561,6 +579,7 @@
             <label for="tab-2">Coding Challenges</label>
             <div class="tabby-content">
                 <p>All my Projects are in the process of being uploaded! :)</p>
+                <button class="expandbtn" id="expand" class="">expand^</button>
             </div>
         </div>
 
@@ -569,6 +588,7 @@
             <label for="tab-3">####</label>
             <div class="tabby-content">
                 <p>Filler.</p>
+                <button class="expandbtn" id="expand" class="">expand^</button>
             </div>
         </div>
 
@@ -577,6 +597,7 @@
             <label for="tab-4">Contact</label>
             <div class="tabby-content">
                 <p>Filler.</p>
+                <button class="expandbtn" id="expand" class="">expand^</button>
             </div>
         </div>
 
@@ -588,8 +609,12 @@
         document.querySelector('.tabs').classList.add('movedown');
         document.querySelector('.about-box').classList.add('aboutappear');
         document.querySelector('.gtkmbutton').classList.add('gtkmdisappear');
-
     });
+
+    document.getElementById('expand').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.add('grow');
+    });
+      
 </script>
 
 </html>
