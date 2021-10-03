@@ -158,7 +158,7 @@
         background-color: #E904FF;
     }
 
-    .expandbtn {
+    .expandcls1 {
         border: none;
         color:;
         text-align: center;
@@ -169,16 +169,104 @@
         float: right;
         bottom: 100%;
         left: 100%;
-
+    }
+    
+    .expandcls2 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+    }
+    
+    .expandcls3 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+    }
+    
+    .expandcls4 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
     }
     
      .expandcollapse {
         visibility: collapse;
         float: left;
     }
+    
+    .collapse {
+        visibility: collapse;
+        float: left;
+    }
 
     
-    .collapsebtn {
+    .collapsecls1 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+        visibility: collapse;
+
+    }
+    
+    .collapsecls2 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+        visibility: collapse;
+
+    }
+    
+    .collapsecls3 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+        visibility: collapse;
+
+    }
+    
+    .collapsecls4 {
         border: none;
         color:;
         text-align: center;
@@ -194,6 +282,11 @@
     }
     
     .fbappear {
+        visibility: visible;
+        
+    }
+    
+    .visible {
         visibility: visible;
         
     }
@@ -612,8 +705,8 @@
             <label for="tab-1">Projects</label>
             <div class="tabby-content">
                 <p class="tabpar">All my Projects are in the process of being uploaded! :)</p>
-                <button class="expandbtn" id="expand">expand^</button>
-                <button class="collapsebtn" id="collapse">collapsev</button>
+                <button class="expandcls1" id="expandid1">expand^</button>
+                <button class="collapsecls1" id="collapseid1">collapsev</button>
 
             </div>
         </div>
@@ -623,7 +716,8 @@
             <label for="tab-2">Coding Challenges</label>
             <div class="tabby-content">
                 <p class="tabpar">All my Projects are in the process of being uploaded! :)</p>
-                <button class="expandbtn" id="expand">expand^</button>
+                 <button class="expandcls2" id="expandid2">expand^</button>
+                 <button class="collapsecls2" id="collapseid2">collapsev</button>
             </div>
         </div>
 
@@ -632,7 +726,8 @@
             <label for="tab-3">####</label>
             <div class="tabby-content">
                 <p class="tabpar">Filler.</p>
-                <button class="expandbtn" id="expand">expand^</button>
+                <button class="expandcls3" id="expandid3">expand^</button>
+                <button class="collapsecls3" id="collapseid3">collapsev</button>
             </div>
         </div>
 
@@ -641,7 +736,8 @@
             <label for="tab-4">Contact</label>
             <div class="tabby-content">
                 <p class="tabpar">Filler.</p>
-                <button class="expandbtn" id="expand">expand^</button>
+                <button class="expandcls4" id="expandid4">expand^</button>
+                <button class="collapsecls4" id="collapseid4">collapsev</button>
             </div>
         </div>
 
@@ -656,20 +752,114 @@
         document.querySelector('.gtkmbutton').classList.add('gtkmdisappear');
     });
 
-    document.getElementById('expand').addEventListener('click', function() {
+    document.getElementById('expandid1').addEventListener('click', function() {
         document.querySelector('.tabs').classList.add('grow');
         document.querySelector('.floatbox').classList.add('gtkmdisappear');
-        document.querySelector('.expandbtn').classList.add('expandcollapse');
-        document.querySelector('.collapsebtn').classList.add('fbappear');
+        document.querySelector('.expandcls1').classList.add('collapse');
+        document.querySelector('.expandcls2').classList.add('collapse');
+        document.querySelector('.expandcls3').classList.add('collapse');
+        document.querySelector('.expandcls4').classList.add('collapse');
+        document.querySelector('.collapsecls1').classList.add('visible');
+        document.querySelector('.collapsecls2').classList.add('visible');
+        document.querySelector('.collapsecls3').classList.add('visible');
+        document.querySelector('.collapsecls4').classList.add('visible');
         
     });
     
-    document.getElementById('collapse').addEventListener('click', function() {
+    document.getElementById('collapseid1').addEventListener('click', function() {
         document.querySelector('.tabs').classList.remove('grow');
         document.querySelector('.floatbox').classList.remove('gtkmdisappear');
-        document.querySelector('.collapsebtn').classList.remove('fbappear');
-        document.querySelector('.expandbtn').classList.remove('expandcollapse');
+        document.querySelector('.expandcls1').classList.remove('collapse');
+        document.querySelector('.expandcls2').classList.remove('collapse');
+        document.querySelector('.expandcls3').classList.remove('collapse');
+        document.querySelector('.expandcls4').classList.remove('collapse');
+        document.querySelector('.collapsecls1').classList.remove('visible');
+        document.querySelector('.collapsecls2').classList.remove('visible');
+        document.querySelector('.collapsecls3').classList.remove('visible');
+        document.querySelector('.collapsecls4').classList.remove('visible');
+
         
+    });
+    
+    document.getElementById('expandid2').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.add('grow');
+        document.querySelector('.floatbox').classList.add('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.add('collapse');
+        document.querySelector('.expandcls2').classList.add('collapse');
+        document.querySelector('.expandcls3').classList.add('collapse');
+        document.querySelector('.expandcls4').classList.add('collapse');
+        document.querySelector('.collapsecls1').classList.add('visible');
+        document.querySelector('.collapsecls2').classList.add('visible');
+        document.querySelector('.collapsecls3').classList.add('visible');
+        document.querySelector('.collapsecls4').classList.add('visible');
+        
+    });
+    
+    document.getElementById('collapseid2').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.remove('grow');
+        document.querySelector('.floatbox').classList.remove('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.remove('collapse');
+        document.querySelector('.expandcls2').classList.remove('collapse');
+        document.querySelector('.expandcls3').classList.remove('collapse');
+        document.querySelector('.expandcls4').classList.remove('collapse');
+        document.querySelector('.collapsecls1').classList.remove('visible');
+        document.querySelector('.collapsecls2').classList.remove('visible');
+        document.querySelector('.collapsecls3').classList.remove('visible');
+        document.querySelector('.collapsecls4').classList.remove('visible');
+    });
+    
+    document.getElementById('expandid3').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.add('grow');
+        document.querySelector('.floatbox').classList.add('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.add('collapse');
+        document.querySelector('.expandcls2').classList.add('collapse');
+        document.querySelector('.expandcls3').classList.add('collapse');
+        document.querySelector('.expandcls4').classList.add('collapse');
+        document.querySelector('.collapsecls1').classList.add('visible');
+        document.querySelector('.collapsecls2').classList.add('visible');
+        document.querySelector('.collapsecls3').classList.add('visible');
+        document.querySelector('.collapsecls4').classList.add('visible');
+        
+    });
+    
+    document.getElementById('collapseid3').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.remove('grow');
+        document.querySelector('.floatbox').classList.remove('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.remove('collapse');
+        document.querySelector('.expandcls2').classList.remove('collapse');
+        document.querySelector('.expandcls3').classList.remove('collapse');
+        document.querySelector('.expandcls4').classList.remove('collapse');
+        document.querySelector('.collapsecls1').classList.remove('visible');
+        document.querySelector('.collapsecls2').classList.remove('visible');
+        document.querySelector('.collapsecls3').classList.remove('visible');
+        document.querySelector('.collapsecls4').classList.remove('visible');
+    });
+    
+    document.getElementById('expandid4').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.add('grow');
+        document.querySelector('.floatbox').classList.add('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.add('collapse');
+        document.querySelector('.expandcls2').classList.add('collapse');
+        document.querySelector('.expandcls3').classList.add('collapse');
+        document.querySelector('.expandcls4').classList.add('collapse');
+        document.querySelector('.collapsecls1').classList.add('visible');
+        document.querySelector('.collapsecls2').classList.add('visible');
+        document.querySelector('.collapsecls3').classList.add('visible');
+        document.querySelector('.collapsecls4').classList.add('visible');
+        
+    });
+    
+    document.getElementById('collapseid4').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.remove('grow');
+        document.querySelector('.floatbox').classList.remove('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.remove('collapse');
+        document.querySelector('.expandcls2').classList.remove('collapse');
+        document.querySelector('.expandcls3').classList.remove('collapse');
+        document.querySelector('.expandcls4').classList.remove('collapse');
+        document.querySelector('.collapsecls1').classList.remove('visible');
+        document.querySelector('.collapsecls2').classList.remove('visible');
+        document.querySelector('.collapsecls3').classList.remove('visible');
+        document.querySelector('.collapsecls4').classList.remove('visible');
     });
       
 </script>
