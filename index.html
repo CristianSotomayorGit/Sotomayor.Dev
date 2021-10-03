@@ -85,12 +85,18 @@
     }
 
     .gtkmdisappear {
-        visibility: hidden;
+        visibility: collapse;
     }
 
     .grow {
         top: 6%;
         bottom: 6%;
+        z-index:15;
+    }
+    
+    .tabscollapse {
+        top: 50%;
+        bottom: 25%%;
         z-index:15;
     }
 
@@ -163,6 +169,33 @@
         float: right;
         bottom: 100%;
         left: 100%;
+
+    }
+    
+     .expandcollapse {
+        visibility: collapse;
+        float: left;
+    }
+
+    
+    .collapsebtn {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+        visibility: collapse;
+
+    }
+    
+    .fbappear {
+        visibility: visible;
+        
     }
 
     .css-typing {
@@ -579,7 +612,9 @@
             <label for="tab-1">Projects</label>
             <div class="tabby-content">
                 <p class="tabpar">All my Projects are in the process of being uploaded! :)</p>
-                <button class="expandbtn" id="expand" class="">expand^</button>
+                <button class="expandbtn" id="expand">expand^</button>
+                <button class="collapsebtn" id="collapse">collapsev</button>
+
             </div>
         </div>
 
@@ -588,7 +623,7 @@
             <label for="tab-2">Coding Challenges</label>
             <div class="tabby-content">
                 <p class="tabpar">All my Projects are in the process of being uploaded! :)</p>
-                <button class="expandbtn" id="expand" class="">expand^</button>
+                <button class="expandbtn" id="expand">expand^</button>
             </div>
         </div>
 
@@ -597,7 +632,7 @@
             <label for="tab-3">####</label>
             <div class="tabby-content">
                 <p class="tabpar">Filler.</p>
-                <button class="expandbtn" id="expand" class="">expand^</button>
+                <button class="expandbtn" id="expand">expand^</button>
             </div>
         </div>
 
@@ -606,7 +641,7 @@
             <label for="tab-4">Contact</label>
             <div class="tabby-content">
                 <p class="tabpar">Filler.</p>
-                <button class="expandbtn" id="expand" class="">expand^</button>
+                <button class="expandbtn" id="expand">expand^</button>
             </div>
         </div>
 
@@ -624,6 +659,17 @@
     document.getElementById('expand').addEventListener('click', function() {
         document.querySelector('.tabs').classList.add('grow');
         document.querySelector('.floatbox').classList.add('gtkmdisappear');
+        document.querySelector('.expandbtn').classList.add('expandcollapse');
+        document.querySelector('.collapsebtn').classList.add('fbappear');
+        
+    });
+    
+    document.getElementById('collapse').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.remove('grow');
+        document.querySelector('.floatbox').classList.remove('gtkmdisappear');
+        document.querySelector('.collapsebtn').classList.remove('fbappear');
+        document.querySelector('.expandbtn').classList.remove('expandcollapse');
+        
     });
       
 </script>
