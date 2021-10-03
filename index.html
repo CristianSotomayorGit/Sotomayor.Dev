@@ -1,4 +1,5 @@
 <html>
+    
 <style>
     .background {
         position: fixed;
@@ -8,7 +9,6 @@
         left: 0px;
         right: 0px;
     }
-
 
     .floatbox {
         position: absolute;
@@ -48,6 +48,10 @@
         border-radius: 8px;
         background: ;
     }
+    
+    .tabpar{
+        float: left;
+    }
 
     .about-box {
         font-family: courier;
@@ -66,7 +70,6 @@
         transition: all 2s ease;
     }
 
-
     .moveup {
         bottom: 50%;
         top: 6%;
@@ -82,9 +85,8 @@
     }
 
     .gtkmdisappear {
-        opacity: 0%;
+        visibility: hidden;
     }
-
 
     .grow {
         top: 6%;
@@ -106,7 +108,6 @@
     .gtkmbutton {
         position: absolute;
         background: ;
-
         bottom: 25px;
         left: 70px;
         right: 25px;
@@ -130,8 +131,12 @@
         -o-transition: all 2s ease;
         -ms-transition: all 2s ease;
         transition: all 2s ease;
+        animation: aboutappear;
+        animation-delay: 12s;
+        animation-duration: .25s;
+        animation-fill-mode: forwards;
+        opacity: 0%;
     }
-
 
     .resumebutton {
         border: none;
@@ -155,6 +160,9 @@
         font-size: 16px;
         cursor: pointer;
         background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
     }
 
     .css-typing {
@@ -405,8 +413,7 @@
             opacity: 100%;
         }
     }
-
-
+    
 
     p {
         margin: 0 0 15px;
@@ -531,7 +538,9 @@
             top: 60px;
         }
     }
+
 </style>
+
 <div class="background">
     <div class="floatbox">
         <div class="about-box">
@@ -569,7 +578,7 @@
             <input type="radio" id="tab-1" name="tabby-tabs" checked>
             <label for="tab-1">Projects</label>
             <div class="tabby-content">
-                <p>All my Projects are in the process of being uploaded! :)</p>
+                <p class="tabpar">All my Projects are in the process of being uploaded! :)</p>
                 <button class="expandbtn" id="expand" class="">expand^</button>
             </div>
         </div>
@@ -578,7 +587,7 @@
             <input type="radio" id="tab-2" name="tabby-tabs">
             <label for="tab-2">Coding Challenges</label>
             <div class="tabby-content">
-                <p>All my Projects are in the process of being uploaded! :)</p>
+                <p class="tabpar">All my Projects are in the process of being uploaded! :)</p>
                 <button class="expandbtn" id="expand" class="">expand^</button>
             </div>
         </div>
@@ -587,7 +596,7 @@
             <input type="radio" id="tab-3" name="tabby-tabs">
             <label for="tab-3">####</label>
             <div class="tabby-content">
-                <p>Filler.</p>
+                <p class="tabpar">Filler.</p>
                 <button class="expandbtn" id="expand" class="">expand^</button>
             </div>
         </div>
@@ -596,13 +605,14 @@
             <input type="radio" id="tab-4" name="tabby-tabs">
             <label for="tab-4">Contact</label>
             <div class="tabby-content">
-                <p>Filler.</p>
+                <p class="tabpar">Filler.</p>
                 <button class="expandbtn" id="expand" class="">expand^</button>
             </div>
         </div>
 
     </div>
 </div>
+
 <script type="text/javascript">
     document.getElementById('gtkm').addEventListener('click', function() {
         document.querySelector('.floatbox').classList.add('moveup');
