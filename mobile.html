@@ -1,47 +1,39 @@
 <html>
 <style>
     html {
-        font-size: 22px;
+        
     }
+	
 
     body {
-        background: red;
+        background: #001E57;
         height: 100%;
         width: 100%;
     }
 
     .floatbox {
-        background-color: dodgerblue;
+        background-color: #553285;
         position: absolute;
         color: white;
         top: 0%;
         bottom: 0%;
         left: 0%;
         right: 0%;
-    }
+		border-radius: 8px;
+		box-shadow: 0px 0px 60px 5px #000000;
+        z-index: 5;
+        -webkit-transition: all 2s ease;
+        -moz-transition: all 2s ease;
+        -o-transition: all 2s ease;
+        -ms-transition: all 2s ease;
+        transition: all 2s ease;
 
-    .cmdlinebox {
-        position: absolute;
-        top :0;
-        background: pink;
-        width: 100%;
-        height: 50%;
-        display:;
-    }
-    
-    .aboutbox {
-        position: absolute;
-        top: 0;
-        background: brown;
-        width: 100%;
-        height: 50%;
-        display:none;
     }
     
     .numcol {
         border-right: 2px solid grey;
         position: absolute;
-        background:blue;
+        background:;
         top: 25px;
         bottom: 25px;
         left: 25px;
@@ -51,9 +43,18 @@
         overflow: hidden;
     }
     
+	.cmdlinebox {
+        position: absolute;
+        top :0;
+        background: ;
+        width: 100%;
+        height: 50%;
+        display:;
+    }
+	
     .cmdlinetext {
         position: absolute;
-        background: green;
+        background:;
         top: 25px;
         bottom: 25px;
         left: 70px;
@@ -62,23 +63,540 @@
         white-space: nowrap;
         overflow: hidden;
     }
-    
-    
-    
-    .tabsbox {
-        position:absolute;
-        bottom:0;
-        background: lightblue;
+        
+	.aboutbox {
+        position: absolute;
+        top: 0;
+        background: brown;
         width: 100%;
         height: 50%;
+        display:none;
+    }
+	
+	.abouttext {
+        position: absolute;
+        background: green;
+        top: 25px;
+        bottom: 25px;
+        left: 50%;
+        right: 25px;
+        font-family: "Courier";
+        white-space: nowrap;
+        overflow: hidden;
+    }
+	
+    .tabs {
+        position:absolute;
+        bottom:0;
+        background: ;
+        width: 100%;
+        height: 50%;
+
+        display: flex;
+        min-height: 300px;
+        border-radius: 8px 8px 0 0;
+        overflow: hidden;
+        -webkit-transition: all 2s ease;
+        -moz-transition: all 2s ease;
+        -o-transition: all 2s ease;
+        -ms-transition: all 2s ease;
+        transition: all 2s ease;
+        font-family: courier;
+        border-radius: 8px;
+        background: ;
+        z-index: 4;
     }
 
-    @media (min-width: 600px) {
+	.tabpar{
+        float: left;
+    }
+
+		
+	.tabby-tab {
+        flex: 1;
+    }
+
+    .tabby-tab label {
+        display: block;
+        box-sizing: border-box;
+        /* tab content must clear this */
+        height: 40px;
+
+        padding: 10px;
+        text-align: center;
+        background: #553285;
+        cursor: pointer;
+        transition: background 0.5s ease;
+        border-radius: 8px 8px 0px 0px;
+
+    }
+
+    .tabby-tab label:hover {
+        background: #7B52AB;
+        border-radius: 8px 8px 0px 0px;
+    }
+
+    .tabby-content {
+        position: absolute;
+
+        left: 0;
+        bottom: 0;
+        right: 0;
+        /* clear the tab labels */
+        top: 40px;
+
+        padding: 20px;
+        border-radius: 0 0 8px 8px;
+        background: #4B2D75;
+
+        transition:
+            opacity 0.8s ease,
+            transform 0.8s ease;
+
+        /* show/hide */
+        opacity: 0;
+        transform: scale(0.1);
+        transform-origin: top left;
+
+    }
+
+
+    /* MAKE IT WORK ----- */
+
+    .tabby-tab [type=radio] {
+        display: none;
+    }
+
+    [type=radio]:checked~label {
+        background: #4B2D75;
+        z-index: 2;
+    }
+
+    [type=radio]:checked~label~.tabby-content {
+        z-index: 1;
+
+        /* show/hide */
+        opacity: 1;
+        transform: scale(1);
+    }
+		
+/*button classes */
+		
+	.about-text {
+        background: ;
+        position: absolute;
+        top: 25px;
+        bottom: 25px;
+        right: 25px;
+        left: 50%;
+        z-index: 10;
+
+    }
+
+    .gtkmbutton {
+        position: absolute;
+        background: ;
+        bottom: 25px;
+        left: 70px;
+        right: 25px;
+        font-family: "Courier";
+        white-space: nowrap;
+        overflow: hidden;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        border-radius: 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color: #E904FF;
+        z-index: 5;
+        -webkit-transition: all 2s ease;
+        -moz-transition: all 2s ease;
+        -o-transition: all 2s ease;
+        -ms-transition: all 2s ease;
+        transition: all 2s ease;
+        animation: aboutappear;
+        animation-delay: 12s;
+        animation-duration: .25s;
+        animation-fill-mode: forwards;
+        opacity: 0%;
+    }
+		
+	.expandcls1 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+    }
+    
+    .expandcls2 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+    }
+    
+    .expandcls3 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+    }
+    
+    .expandcls4 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+    }
+    
+     .expandcollapse {
+        visibility: collapse;
+        float: left;
+    }
+    
+    .collapse {
+        visibility: collapse;
+        float: left;
+    }
+
+    
+    .collapsecls1 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+        visibility: collapse;
+
+    }
+    
+    .collapsecls2 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+        visibility: collapse;
+
+    }
+    
+    .collapsecls3 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+        visibility: collapse;
+
+    }
+    
+    .collapsecls4 {
+        border: none;
+        color:;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4B2D75;
+        float: right;
+        bottom: 100%;
+        left: 100%;
+        visibility: collapse;
+
+    }
+/* javascript activated trasnsitions */
+	
+	.visible {
+		visibility: visible;
+        
+    }
+	
+	.collapse {
+        visibility: collapse;
+        float: left;
+    }
+	
+	.moveup {
+        bottom: 50%;
+        top: 6%;
+    }
+
+    .movedown {
+        top: 50%;
+        bottom: 6%;
+    }
+	
+	.aboutappear {
+        opacity: 100%;
+    }
+
+    .gtkmdisappear {
+        visibility: collapse;
+    }
+
+    .grow {
+        top: 6%;
+        bottom: 6%;
+        z-index:15;
+    }
+	
+/* CSS animations */
+	
+	.cmdlinetext p {
+        border-right: .15em solid orange;
+        font-family: "Courier";
+        white-space: nowrap;
+        overflow: hidden;
+    }
+	
+	.cmdlinetext p:nth-child(1) {
+        width: 7.5em;
+        -webkit-animation: type1 1s steps(40, end);
+        animation: type1 1s steps(40, end);
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .cmdlinetext p:nth-child(2) {
+        width: 5em;
+        opacity: 0;
+        -webkit-animation: type1 1s steps(40, end);
+        animation: type1 1s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 1s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .cmdlinetext p:nth-child(3) {
+        width: 16.75em;
+        opacity: 0;
+        -webkit-animation: type1 2s steps(40, end);
+        animation: type1 2s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .cmdlinetext p:nth-child(4) {
+        width: 20em;
+        opacity: 0;
+        -webkit-animation: type1 2s steps(40, end);
+        animation: type1 2s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 4s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .cmdlinetext p:nth-child(5) {
+        width: 13em;
+        opacity: 0;
+        -webkit-animation: type1 2s steps(40, end);
+        animation: type1 2s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 6s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .cmdlinetext p:nth-child(6) {
+        width: 24.5em;
+        opacity: 0;
+        -webkit-animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
+        animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
+        -webkit-animation-delay: 2s;
+        animation-delay: 8s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+	
+	.numcol p:nth-child(1) {
+        animation: appear;
+        animation-duration: .15s;
+    }
+
+    .numcol p:nth-child(2) {
+        animation: appear;
+        animation-duration: 1s;
+    }
+
+    .numcol p:nth-child(3) {
+        animation: appear;
+        animation-duration: 2s;
+    }
+
+    .numcol p:nth-child(4) {
+        animation: appear;
+        animation-duration: 4s;
+    }
+
+    .numcol p:nth-child(5) {
+        animation: appear;
+        animation-duration: 6s;
+    }
+
+    .numcol p:nth-child(6) {
+        animation: appear;
+        animation-duration: 8s;
+    }
+	
+	    @keyframes type1 {
+        0% {
+            width: 0;
+        }
+
+        1% {
+            opacity: 1;
+        }
+
+        15s 99.9% {
+            border-right: .15em solid orange;
+        }
+
+        100% {
+            opacity: 1;
+            border: none;
+        }
+    }
+
+    @-webkit-keyframes type1 {
+        0% {
+            width: 0;
+        }
+
+        1% {
+            opacity: 1;
+        }
+
+        99.9% {
+            border-right: .15em solid orange;
+        }
+
+        100% {
+            opacity: 1;
+            border: none;
+        }
+    }
+
+    transition-delay: 2s;
+
+    @keyframes type2 {
+        0% {
+            width: 0;
+        }
+
+        1% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes type2 {
+        0% {
+            width: 0;
+        }
+
+        1% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+    @-webkit-keyframes blink {
+        50% {
+            border-color: tranparent;
+        }
+    }
+
+    @keyframes appear {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+
+
+    @keyframes aboutappear {
+        0% {
+            opacity: 0%;
+        }
+
+        100% {
+            opacity: 100%;
+        }
+    }
+	
+/* breakpoints*/
+	
+	@media (min-width: 600px) {
         .floatbox {
             top: 10%;
             bottom: 10%;
             left: 10%;
             right: 10%;
+			height: 600px;
         }
     }
 
@@ -93,17 +611,201 @@
     }
 </style>
 
-<div class="cards">
-    <div class="floatbox">
-        <div class="cmdlinebox">
-            <div class="numcol"></div>
-            <div class="cmdlinetext"></div>            
+<div class="floatbox">
+		
+	<div class="cmdlinebox">
+            <div class="numcol">
+				<p>1</p>
+            	<p>2</p>
+            	<p>3</p>
+            	<p>4</p>
+            	<p>5</p>
+            	<p>6</p>
+			</div>
+            <div class="cmdlinetext">
+				<p>#introduction</p>
+            	<p>Hi there,</p>
+            	<p>My name is Cristian Sotomayor</p>
+            	<p>I am a software engineer located in</p>
+            	<p>los angeles, california</p>
+            	<p>thank you for visiting my interactive portfolio.</p>
+				<button class="gtkmbutton" id="gtkm">Get to know me</button>
+			</div>            
         </div>
         
-        <div class="aboutbox"></div>
+    <div class="aboutbox">
+		<div class="abouttext">
+        	<p>Name: Cristian Sotomayor</p>
+            <p>Location: Los Angeles, CA</p>
+            <p>Hi, there! I am a computer science graduate and a software engineer with over one year and a half of professional experience developing databases with MySQL and Python scripting. <br><br> I also have two years of experience as a hobbyist with web development tools like HTML, CSS and Javascript. As well as C++ in plug-in development for CAD applications.</p>
+            <button class="resumebutton button1">Download my resume</button>
+            </div>
+	</div>
         
-        <div class="tabsbox"></div>
-    </div>
+    <div class="tabs">
+	        <div class="tabby-tab">
+            <input type="radio" id="tab-1" name="tabby-tabs" checked>
+            <label for="tab-1">Projects</label>
+            <div class="tabby-content">
+                <p class="tabpar">All my Projects are in the process of being uploaded! :)</p>
+                <button class="expandcls1" id="expandid1">expand^</button>
+                <button class="collapsecls1" id="collapseid1">collapsev</button>
+
+            </div>
+        </div>
+
+        <div class="tabby-tab">
+            <input type="radio" id="tab-2" name="tabby-tabs">
+            <label for="tab-2">Coding Challenges</label>
+            <div class="tabby-content">
+                <p class="tabpar">All my Projects are in the process of being uploaded! :)</p>
+                 <button class="expandcls2" id="expandid2">expand^</button>
+                 <button class="collapsecls2" id="collapseid2">collapsev</button>
+            </div>
+        </div>
+
+        <div class="tabby-tab">
+            <input type="radio" id="tab-3" name="tabby-tabs">
+            <label for="tab-3">####</label>
+            <div class="tabby-content">
+                <p class="tabpar">Filler.</p>
+                <button class="expandcls3" id="expandid3">expand^</button>
+                <button class="collapsecls3" id="collapseid3">collapsev</button>
+            </div>
+        </div>
+
+        <div class="tabby-tab">
+            <input type="radio" id="tab-4" name="tabby-tabs">
+            <label for="tab-4">Contact</label>
+            <div class="tabby-content">
+                <p class="tabpar">Filler.</p>
+                <button class="expandcls4" id="expandid4">expand^</button>
+                <button class="collapsecls4" id="collapseid4">collapsev</button>
+            </div>
+        </div>
+
+	</div>
+		
 </div>
+	
+<script type="text/javascript">
+    document.getElementById('gtkm').addEventListener('click', function() {
+        document.querySelector('.floatbox').classList.add('moveup');
+        document.querySelector('.tabs').classList.add('movedown');
+        document.querySelector('.aboutbox').classList.add('aboutappear');
+        document.querySelector('.gtkmbutton').classList.add('gtkmdisappear');
+    });
+
+    document.getElementById('expandid1').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.add('grow');
+        document.querySelector('.floatbox').classList.add('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.add('collapse');
+        document.querySelector('.expandcls2').classList.add('collapse');
+        document.querySelector('.expandcls3').classList.add('collapse');
+        document.querySelector('.expandcls4').classList.add('collapse');
+        document.querySelector('.collapsecls1').classList.add('visible');
+        document.querySelector('.collapsecls2').classList.add('visible');
+        document.querySelector('.collapsecls3').classList.add('visible');
+        document.querySelector('.collapsecls4').classList.add('visible');
+        
+    });
+    
+    document.getElementById('collapseid1').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.remove('grow');
+        document.querySelector('.floatbox').classList.remove('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.remove('collapse');
+        document.querySelector('.expandcls2').classList.remove('collapse');
+        document.querySelector('.expandcls3').classList.remove('collapse');
+        document.querySelector('.expandcls4').classList.remove('collapse');
+        document.querySelector('.collapsecls1').classList.remove('visible');
+        document.querySelector('.collapsecls2').classList.remove('visible');
+        document.querySelector('.collapsecls3').classList.remove('visible');
+        document.querySelector('.collapsecls4').classList.remove('visible');
+
+        
+    });
+    
+    document.getElementById('expandid2').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.add('grow');
+        document.querySelector('.floatbox').classList.add('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.add('collapse');
+        document.querySelector('.expandcls2').classList.add('collapse');
+        document.querySelector('.expandcls3').classList.add('collapse');
+        document.querySelector('.expandcls4').classList.add('collapse');
+        document.querySelector('.collapsecls1').classList.add('visible');
+        document.querySelector('.collapsecls2').classList.add('visible');
+        document.querySelector('.collapsecls3').classList.add('visible');
+        document.querySelector('.collapsecls4').classList.add('visible');
+        
+    });
+    
+    document.getElementById('collapseid2').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.remove('grow');
+        document.querySelector('.floatbox').classList.remove('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.remove('collapse');
+        document.querySelector('.expandcls2').classList.remove('collapse');
+        document.querySelector('.expandcls3').classList.remove('collapse');
+        document.querySelector('.expandcls4').classList.remove('collapse');
+        document.querySelector('.collapsecls1').classList.remove('visible');
+        document.querySelector('.collapsecls2').classList.remove('visible');
+        document.querySelector('.collapsecls3').classList.remove('visible');
+        document.querySelector('.collapsecls4').classList.remove('visible');
+    });
+    
+    document.getElementById('expandid3').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.add('grow');
+        document.querySelector('.floatbox').classList.add('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.add('collapse');
+        document.querySelector('.expandcls2').classList.add('collapse');
+        document.querySelector('.expandcls3').classList.add('collapse');
+        document.querySelector('.expandcls4').classList.add('collapse');
+        document.querySelector('.collapsecls1').classList.add('visible');
+        document.querySelector('.collapsecls2').classList.add('visible');
+        document.querySelector('.collapsecls3').classList.add('visible');
+        document.querySelector('.collapsecls4').classList.add('visible');
+        
+    });
+    
+    document.getElementById('collapseid3').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.remove('grow');
+        document.querySelector('.floatbox').classList.remove('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.remove('collapse');
+        document.querySelector('.expandcls2').classList.remove('collapse');
+        document.querySelector('.expandcls3').classList.remove('collapse');
+        document.querySelector('.expandcls4').classList.remove('collapse');
+        document.querySelector('.collapsecls1').classList.remove('visible');
+        document.querySelector('.collapsecls2').classList.remove('visible');
+        document.querySelector('.collapsecls3').classList.remove('visible');
+        document.querySelector('.collapsecls4').classList.remove('visible');
+    });
+    
+    document.getElementById('expandid4').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.add('grow');
+        document.querySelector('.floatbox').classList.add('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.add('collapse');
+        document.querySelector('.expandcls2').classList.add('collapse');
+        document.querySelector('.expandcls3').classList.add('collapse');
+        document.querySelector('.expandcls4').classList.add('collapse');
+        document.querySelector('.collapsecls1').classList.add('visible');
+        document.querySelector('.collapsecls2').classList.add('visible');
+        document.querySelector('.collapsecls3').classList.add('visible');
+        document.querySelector('.collapsecls4').classList.add('visible');
+        
+    });
+    
+    document.getElementById('collapseid4').addEventListener('click', function() {
+        document.querySelector('.tabs').classList.remove('grow');
+        document.querySelector('.floatbox').classList.remove('gtkmdisappear');
+        document.querySelector('.expandcls1').classList.remove('collapse');
+        document.querySelector('.expandcls2').classList.remove('collapse');
+        document.querySelector('.expandcls3').classList.remove('collapse');
+        document.querySelector('.expandcls4').classList.remove('collapse');
+        document.querySelector('.collapsecls1').classList.remove('visible');
+        document.querySelector('.collapsecls2').classList.remove('visible');
+        document.querySelector('.collapsecls3').classList.remove('visible');
+        document.querySelector('.collapsecls4').classList.remove('visible');
+    });
+      
+</script>
 
 </html>
