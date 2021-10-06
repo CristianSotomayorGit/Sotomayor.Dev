@@ -1,4 +1,4 @@
-<html>
+
 <style>
     html {
         
@@ -219,8 +219,81 @@ display: ;
         transform: scale(1);
     }
 		
+	
+	 /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+/* Allow the user to vertically resize the textarea (not horizontally) */
+	background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=subit] {
+  background-color: rgb(254,196,255);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+	height:30px;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submt]:hover {
+  background-color: rgb(47, 244, 255);
+}
+
+/* Add a background color and some padding around the form */
+.container {
+		position:absolute;
+  border-radius:;
+  background-color:;
+  padding: 20px;
+		height:100%;
+} 
+	
+	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+	
 /*button classes */
 		
+	
+	    input[type=submit] {
+
+        border: none;
+        color: black;
+        padding: 15px 32px;
+        border-radius: 25px;
+
+        text-decoration: none;
+
+        font-size: 16px;
+
+        cursor: pointer;
+        background-color: rgb(254,196,255);
+        bottom:0;
+    }
+
+input[type=submit]:hover {
+  background-color: rgb(47, 244, 255);
+    }
+	
     .resumebutton1 {
         position:absolute;
         border: none;
@@ -1398,9 +1471,23 @@ display: ;
             <input type="radio" id="tab-4" name="tabby-tabs">
             <label for="tab-4">Contact</label>
             <div class="tabby-content">
-                <p class="tabpar">Filler.</p>
                 <button class="expandcls4" id="expandid4">expand^</button>
-                <button class="collapsecls4" id="collapseid4">collapsev</button>
+                <button class="collapsecls4" id="collapseid4">collapsev</button>				
+ 				
+				<div class="container">
+					
+  					<form action="https://formspree.io/f/mdoyjpal" method="POST">
+
+    					<input type="text" id="fname" name="fullname" placeholder="Your full name..">
+						
+						<input type="text" name="email" placeholder="Your email..">
+
+    					<textarea id="subject" name="message" placeholder="Write something.." style="height:auto"></textarea>
+
+    					<input type="submit" value="Submit">
+
+ 					 </form>
+				</div> 
             </div>
         </div>
 
