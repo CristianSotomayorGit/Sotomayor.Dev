@@ -1,4 +1,4 @@
-
+<html>
 <style>
     html {
         
@@ -184,10 +184,10 @@
 
         padding: 20px;
         border-radius: 0 0 8px 8px;
-        background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
+        background:  linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
 
         transition:
-            opacity 0.8s ease,
+opacity 0.8s ease,
             transform 0.8s ease;
 
         /* show/hide */
@@ -232,6 +232,21 @@ input[type=text], select, textarea {
 /* Allow the user to vertically resize the textarea (not horizontally) */
 	background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
 }
+	
+input[type=message], textarea {
+		POSITION:;
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+
+		bottom:20px;
+/* Allow the user to vertically resize the textarea (not horizontally) */
+	background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
+}
 
 /* Style the submit button with a specific background color etc */
 input[type=subit] {
@@ -249,14 +264,6 @@ input[type=submt]:hover {
   background-color: rgb(47, 244, 255);
 }
 
-/* Add a background color and some padding around the form */
-.container {
-		position:absolute;
-  border-radius:;
-  background-color:;
-  padding: 20px;
-		height:100%;
-} 
 	
 	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
@@ -1474,7 +1481,7 @@ input[type=submit]:hover {
                 <button class="expandcls4" id="expandid4">expand^</button>
                 <button class="collapsecls4" id="collapseid4">collapsev</button>				
  				
-				<div class="container">
+
 					
   					<form action="https://formspree.io/f/mdoyjpal" method="POST">
 
@@ -1482,12 +1489,11 @@ input[type=submit]:hover {
 						
 						<input type="text" name="email" placeholder="Your email..">
 
-    					<textarea id="subject" name="message" placeholder="Write something.." style="height:auto"></textarea>
-
+    					<input type="message" id="subject" name="message" placeholder="Write something..">
     					<input type="submit" value="Submit">
 
  					 </form>
-				</div> 
+
             </div>
         </div>
 
