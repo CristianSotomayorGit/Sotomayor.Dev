@@ -510,7 +510,7 @@ input[type=submit] {
     z-index: 15;
 }
 
-/* CSS animations */
+/* Command line intro layout and animation*/
 
 .cmdlinetext p {
     border-right: .15em solid orange;
@@ -520,64 +520,75 @@ input[type=submit] {
 }
 
     .cmdlinetext p:nth-child(1) {
-        width: 7.5em;
+        width: 15em;
         -webkit-animation: type1 1s steps(40, end);
-        animation: type1 1s steps(40, end);
+        animation: type1 1s steps(40, end); /*Typing speed*/
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
 
     .cmdlinetext p:nth-child(2) {
-        width: 5em;
+        width: 15em;
         opacity: 0;
-        -webkit-animation: type1 1s steps(40, end);
-        animation: type1 1s steps(40, end);
+        -webkit-animation: type1 1.15s steps(40, end);
+        animation: type1 1.15s steps(40, end); /*Typing speed*/
         -webkit-animation-delay: 2s;
-        animation-delay: 1s;
+        animation-delay: 1s; /*Typing animation order*/
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
 
     .cmdlinetext p:nth-child(3) {
-        width: 16.75em;
+        width: 15em;
         opacity: 0;
-        -webkit-animation: type1 2s steps(40, end);
-        animation: type1 2s steps(40, end);
+        -webkit-animation: type1 0.5s steps(40, end);
+        animation: type1 0.5s steps(40, end); /*Typing speed*/
         -webkit-animation-delay: 2s;
-        animation-delay: 2s;
+        animation-delay: 2.15s; /*Typing animation order*/
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
 
     .cmdlinetext p:nth-child(4) {
-        width: 20em;
+        width: 30em;
         opacity: 0;
-        -webkit-animation: type1 2s steps(40, end);
-        animation: type1 2s steps(40, end);
+        -webkit-animation: type1 1.4s steps(40, end);
+        animation: type1 1.4s steps(40, end); /*Typing speed*/
         -webkit-animation-delay: 2s;
-        animation-delay: 4s;
+        animation-delay: 2.65s; /*Typing animation order*/
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
 
     .cmdlinetext p:nth-child(5) {
-        width: 13em;
+        width: 30em;
         opacity: 0;
-        -webkit-animation: type1 2s steps(40, end);
-        animation: type1 2s steps(40, end);
+        -webkit-animation: type1 1.7s steps(40, end);
+        animation: type1 1.7s steps(40, end); /*Typing speed*/
         -webkit-animation-delay: 2s;
-        animation-delay: 6s;
+        animation-delay: 4.0s; /*Typing animation order*/
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
 
     .cmdlinetext p:nth-child(6) {
-        width: 24.5em;
+        width: 30em;
         opacity: 0;
-        -webkit-animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
-        animation: type2 2.5s steps(40, end), blink .5s step-end infinite alternate;
+        -webkit-animation: type1 1.2s steps(40, end);
+        animation: type1 1.2s steps(40, end); /*Typing speed*/
         -webkit-animation-delay: 2s;
-        animation-delay: 8s;
+        animation-delay: 5.7s; /*Typing animation order*/
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .cmdlinetext p:nth-child(7) {
+        width: 16em;
+        opacity: 0;
+        -webkit-animation: type2 1.3s steps(40, end), blink .5s step-end infinite alternate;
+        animation: type2 1.3s steps(40, end), blink .5s step-end infinite alternate; /*Typing speed*/
+        -webkit-animation-delay: 2s;
+        animation-delay: 7s; /*Typing animation order*/
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
@@ -594,23 +605,29 @@ input[type=submit] {
 
 .numcol p:nth-child(3) {
     animation: appear;
-    animation-duration: 2s;
+    animation-duration: 2.15s;
 }
 
 .numcol p:nth-child(4) {
     animation: appear;
-    animation-duration: 4s;
+    animation-duration: 2.65s;
 }
 
 .numcol p:nth-child(5) {
     animation: appear;
-    animation-duration: 6s;
+    animation-duration: 4.0s;
 }
 
 .numcol p:nth-child(6) {
     animation: appear;
-    animation-duration: 8s;
+    animation-duration: 5.7s;
 }
+
+.numcol p:nth-child(7) {
+    animation: appear;
+    animation-duration: 7s;
+}
+
 
 @keyframes type1 {
     0% {
@@ -826,7 +843,7 @@ transition-delay: 2s;
         -ms-transition: all 2s ease;
         transition: all 2s ease;
         animation: aboutappear;
-        animation-delay: 12s;
+        animation-delay: 9s;
         animation-duration: .25s;
         animation-fill-mode: forwards;
         opacity: 0%;
