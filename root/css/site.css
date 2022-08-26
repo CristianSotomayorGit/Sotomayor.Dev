@@ -1,0 +1,956 @@
+﻿body {
+    background: #001E57;
+    height: 100%;
+    width: 100%;
+}
+
+.abouttext{
+    opacity: 0;
+}
+.floatbox {
+    background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
+    position: absolute;
+    color: white;
+    background-color:yellow;
+    top: 25%;
+    bottom: 25%;
+    left: 0%;
+    right: 0%;
+    border-radius: 8px;
+    border: solid black;
+    box-shadow: 0px 0px 60px 5px #000000;
+    min-height: 400px;
+    /*z-index:;*/
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease;
+}
+
+.cmdlinebox {
+    position: absolute;
+    /* background:;*/
+    width: 100%;
+    top: 0%;
+    bottom: 0%;
+    background-color:aqua;
+    /*display:;*/
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease;
+}
+
+.numcol {
+    border-right: 2px solid grey;
+    position: absolute;
+    /*background:;*/
+    top: 25px;
+    bottom: 60px;
+    left: 25px;
+    width: 29px;
+    font-family: "Courier";
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cmdlinetext {
+    position: absolute;
+    /*background:;*/
+    top: 25px;
+    bottom: 25px;
+    left: 70px;
+    right: 25px;
+    font-family: "Courier";
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.aboutbox {
+    position: absolute;
+    top: 0;
+    /*background:;*/
+    background-color:pink;
+    width: 100%;
+    height: 50%;
+    visibility: collapse;
+    opacity: 0;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease;
+}
+
+.profimage {
+    position: absolute;
+    /*background:;*/
+    top: 25px;
+    bottom: 25px;
+    left: 25px;
+    right: 50%;
+}
+
+/* Images */
+.giphy-embed {
+    position: absolute;
+    border-radius: 50%;
+    border: solid;
+    width:200px;
+    height:200px;
+}
+
+.profimage {
+    background-color: palevioletred;
+    width: 200px;
+    frameBorder ="0"
+}
+
+.sociallogos{
+    position: absolute;
+    top:12.5%;
+    right:0%;
+    background-color: lightgreen;
+    width:40px;
+    height:200px;
+
+}
+.githublogo {
+    margin:auto;
+    position: relative;
+    height:40px;
+    width:40px
+}
+
+.linkedinlogo {
+    margin: auto;
+    position: relative;
+    bottom:0%;
+    height: 40px;
+    width: 40px
+}
+
+.abouttext {
+    position: absolute;
+    /*background:;*/
+    top: 25px;
+    bottom: 25px;
+    left: 50%;
+    right: 25px;
+    font-family: "Courier";
+    white-space: wrap;
+    overflow: hidden;
+}
+
+.tabs {
+    position: absolute;
+    /*background:;*/
+    width: 100%;
+    top: 50%;
+    bottom: 0%;
+    display: flex;
+    /*min-height:*/
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease;
+    font-family: courier;
+    border-radius: 8px;
+    visibility: collapse;
+    opacity: 0;
+}
+
+.tabpar {
+    float: left;
+}
+
+.tabby-tab {
+    flex: 1;
+}
+
+.tabby-tab label {
+    display: block;
+    box-sizing: border-box;
+    /* tab content must clear this */
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    /*background:;*/
+    cursor: pointer;
+    transition: background 0.5s ease;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.tabby-tab label:hover {
+            background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
+            border-radius: 8px 8px 0px 0px;
+        }
+
+.tabby-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* clear the tab labels */
+    top: 40px;
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    /* show/hide */
+    opacity: 0;
+    transform: scale(0.1);
+    transform-origin: top;
+    /*display:*/
+}
+
+/* MAKE IT WORK ----- */
+
+.tabby-tab [type=radio] {
+    display: none;
+}
+
+[type=radio]:checked ~ label {
+    background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
+    z-index: 2;
+}
+
+[type=radio]:checked ~ label ~ .tabby-content {
+        z-index: 1;
+        /* show/hide */
+        opacity: 1;
+        transform: scale(1);
+    }
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    /* Allow the user to vertically resize the textarea (not horizontally) */
+    background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
+}
+
+input[type=message], textarea {
+    /*POSITION:;*/
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+
+    bottom: 20px;
+    /* Allow the user to vertically resize the textarea (not horizontally) */
+    background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=subit] {
+    background-color: rgb(254,196,255);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    height: 30px;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submt]:hover {
+    background-color: rgb(47, 244, 255);
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
+/*button classes */
+
+
+input[type=submit] {
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(254,196,255);
+    bottom: 0;
+}
+
+    input[type=submit]:hover {
+        background-color: rgb(47, 244, 255);
+    }
+
+.resumebutton1 {
+    position: absolute;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: rgb(254,196,255);
+    bottom: 0;
+}
+
+    .resumebutton1:hover {
+        background-color: rgb(47, 244, 255);
+        color: black;
+    }
+
+.resumebutton2 {
+    position: absolute;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: rgb(254,196,255);
+    bottom: 0;
+    opacity: 0;
+    visibility: collapse;
+}
+
+    .resumebutton2:hover {
+        background-color: rgb(47, 244, 255);
+        color: black;
+    }
+
+.gtkmbutton {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    font-family: "Courier";
+    white-space: nowrap;
+    overflow: hidden;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /*margin:;*/
+    cursor: pointer;
+    background: rgb(254,196,255);
+    z-index: 5;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease;
+    animation: aboutappear;
+    animation-delay: 12s;
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+    opacity: 0%;
+}
+
+    .gtkmbutton:hover {
+        background-color: rgb(47, 244, 255);
+        color: black;
+    }
+
+.expandcls1 {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.0);
+    float: right;
+    bottom: 100%;
+    left: 100%;
+}
+
+.expandcls2 {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.0);
+    float: right;
+    bottom: 100%;
+    left: 100%;
+}
+
+.expandcls3 {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.0);
+    float: right;
+    bottom: 100%;
+    left: 100%;
+}
+
+.expandcls4 {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.0);
+    float: right;
+    bottom: 100%;
+    left: 100%;
+}
+
+.expandcollapse {
+    visibility: collapse;
+    float: left;
+}
+
+.collapse {
+    visibility: collapse;
+    float: left;
+}
+
+
+.collapsecls1 {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.0);
+    float: right;
+    bottom: 100%;
+    left: 100%;
+    visibility: collapse;
+}
+
+.collapsecls2 {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.0);
+    float: right;
+    bottom: 100%;
+    left: 100%;
+    visibility: collapse;
+}
+
+.collapsecls3 {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.0);
+    float: right;
+    bottom: 100%;
+    left: 100%;
+    visibility: collapse;
+}
+
+.collapsecls4 {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.0);
+    float: right;
+    bottom: 100%;
+    left: 100%;
+    visibility: collapse;
+}
+
+/* javascript activated trasnsitions */
+
+.visible {
+    visibility: visible;
+}
+
+.collapse {
+    visibility: collapse;
+    float: left;
+}
+
+.open {
+    bottom: 0%;
+    top: 0%;
+}
+
+.movebottomhalf {
+    top: 50%;
+    bottom: 0%;
+    display: flex;
+}
+
+.movetophalf {
+    top: 0%;
+    bottom: 50%;
+}
+
+.appear {
+    visibility: visible;
+    opacity: 100%;
+}
+
+.gtkmdisappear {
+    visibility: collapse;
+    opacity: 0%;
+}
+
+.grow {
+    top: 0%;
+    bottom: 0%;
+    z-index: 15;
+}
+
+/* Command line intro layout and animation*/
+
+.cmdlinetext p {
+    border-right: .15em solid orange;
+    font-family: "Courier";
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+    .cmdlinetext p:nth-child(1) {
+        width: 15em;
+        -webkit-animation: type1 1s steps(40, end);
+        animation: type1 1s steps(40, end); /*Typing speed*/
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .cmdlinetext p:nth-child(2) {
+        width: 15em;
+        opacity: 0;
+        -webkit-animation: type1 1.15s steps(40, end);
+        animation: type1 1.15s steps(40, end); /*Typing speed*/
+        -webkit-animation-delay: 2s;
+        animation-delay: 1s; /*Typing animation order*/
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .cmdlinetext p:nth-child(3) {
+        width: 7em;
+        opacity: 0;
+        -webkit-animation: type1 0.5s steps(40, end);
+        animation: type1 0.5s steps(40, end); /*Typing speed*/
+        -webkit-animation-delay: 2s;
+        animation-delay: 2.15s; /*Typing animation order*/
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .cmdlinetext p:nth-child(4) {
+        width: 18em;
+        opacity: 0;
+        -webkit-animation: type1 1.4s steps(40, end);
+        animation: type1 1.4s steps(40, end); /*Typing speed*/
+        -webkit-animation-delay: 2s;
+        animation-delay: 2.65s; /*Typing animation order*/
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .cmdlinetext p:nth-child(5) {
+        width: 21em;
+        opacity: 0;
+        -webkit-animation: type1 1.7s steps(40, end);
+        animation: type1 1.7s steps(40, end); /*Typing speed*/
+        -webkit-animation-delay: 2s;
+        animation-delay: 4.0s; /*Typing animation order*/
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .cmdlinetext p:nth-child(6) {
+        width: 16em;
+        opacity: 0;
+        -webkit-animation: type1 1.2s steps(40, end);
+        animation: type1 1.2s steps(40, end); /*Typing speed*/
+        -webkit-animation-delay: 2s;
+        animation-delay: 5.7s; /*Typing animation order*/
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    .cmdlinetext p:nth-child(7) {
+        width: 16em;
+        opacity: 0;
+        -webkit-animation: type2 1.3s steps(40, end), blink .5s step-end infinite alternate;
+        animation: type2 1.3s steps(40, end), blink .5s step-end infinite alternate; /*Typing speed*/
+        -webkit-animation-delay: 2s;
+        animation-delay: 7s; /*Typing animation order*/
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+.numcol p:nth-child(1) {
+    animation: appear;
+    animation-duration: .15s;
+}
+
+.numcol p:nth-child(2) {
+    animation: appear;
+    animation-duration: 1s;
+}
+
+.numcol p:nth-child(3) {
+    animation: appear;
+    animation-duration: 2.15s;
+}
+
+.numcol p:nth-child(4) {
+    animation: appear;
+    animation-duration: 2.65s;
+}
+
+.numcol p:nth-child(5) {
+    animation: appear;
+    animation-duration: 4.0s;
+}
+
+.numcol p:nth-child(6) {
+    animation: appear;
+    animation-duration: 5.7s;
+}
+
+.numcol p:nth-child(7) {
+    animation: appear;
+    animation-duration: 7s;
+}
+
+
+@keyframes type1 {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        opacity: 1;
+    }
+
+    99.9% {
+        border-right: .15em solid orange;
+    }
+
+    100% {
+        opacity: 1;
+        border: none;
+    }
+}
+
+@-webkit-keyframes type1 {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        opacity: 1;
+    }
+
+    99.9% {
+        border-right: .15em solid orange;
+    }
+
+    100% {
+        opacity: 1;
+        border: none;
+    }
+}
+
+/*transition-delay: 2s;*/
+
+@keyframes type2 {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes type2 {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@-webkit-keyframes blink {
+    50% {
+        border-color: tranparent;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+@keyframes aboutappear {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+/* breakpoints*/
+
+@media (min-width: 600px) {
+    .floatbox {
+        top: 25%;
+        bottom: 25%;
+        left: 10%;
+        right: 10%;
+    }
+
+    .open {
+        bottom: 10%;
+        top: 10%
+    }
+
+    .gtkmbutton {
+        position: absolute;
+        /*background:;*/
+        bottom: 25px;
+        left: 70px;
+        right: 25px;
+        font-family: "Courier";
+        white-space: nowrap;
+        overflow: hidden;
+        border: none;
+        color: black;
+        padding: 15px 32px;
+        border-radius: 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color: rgb(254,196,255);
+        z-index: 5;
+        -webkit-transition: all 2s ease;
+        -moz-transition: all 2s ease;
+        -o-transition: all 2s ease;
+        -ms-transition: all 2s ease;
+        transition: all 2s ease;
+        animation: aboutappear;
+        animation-delay: 12s;
+        animation-duration: .25s;
+        animation-fill-mode: forwards;
+        opacity: 0%;
+        width: 200px;
+        height: 50px;
+    }
+
+    .abouttext{
+        opacity: 1;
+    }
+}
+
+@media (min-width: 900px) {
+
+    .resumebutton1 {
+        opacity: 0;
+        visibility: collapse;
+    }
+
+    .resumebutton2 {
+        opacity: 100%;
+        visibility: visible;
+    }
+
+    .floatbox {
+        top: 25%;
+        bottom: 25%;
+        left: 25%;
+        right: 25%;
+        width: 960px;
+    }
+
+    .open {
+        bottom: 6.25%;
+        top: 6.25%
+    }
+
+    .gtkmbutton {
+        position: absolute;
+        /*background:;*/
+        bottom: 25px;
+        left: 70px;
+        right: 25px;
+        font-family: "Courier";
+        white-space: nowrap;
+        overflow: hidden;
+        border: none;
+        color: black;
+        padding: 15px 32px;
+        border-radius: 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color: rgb(254,196,255);
+        z-index: 5;
+        -webkit-transition: all 2s ease;
+        -moz-transition: all 2s ease;
+        -o-transition: all 2s ease;
+        -ms-transition: all 2s ease;
+        transition: all 2s ease;
+        animation: aboutappear;
+        animation-delay: 9s;
+        animation-duration: .25s;
+        animation-fill-mode: forwards;
+        opacity: 0%;
+        width: 200px;
+        height: 50px;
+    }
+
+    .abouttext {
+        opacity: 1;
+    }
+@media (min-width: 900px) {
+
+    .giphy-embed {
+        height: 300px;
+        width: 300px;
+        left: 12.25%;
+    }
+
+    .resumebutton1 {
+        opacity: 0;
+        visibility: collapse;
+    }
+
+    .resumebutton2 {
+        opacity: 100%;
+        visibility: visible;
+    }
+
+    .floatbox {
+        top: 25%;
+        bottom: 25%;
+        left: 25%;
+        right: 25%;
+        width: 960px;
+    }
+
+    .open {
+        bottom: 6.25%;
+        top: 6.25%
+    }
+
+    .gtkmbutton {
+        position: absolute;
+        /*background:;*/
+        bottom: 25px;
+        left: 70px;
+        right: 25px;
+        font-family: "Courier";
+        white-space: nowrap;
+        overflow: hidden;
+        border: none;
+        color: black;
+        padding: 15px 32px;
+        border-radius: 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color: rgb(254,196,255);
+        z-index: 5;
+        -webkit-transition: all 2s ease;
+        -moz-transition: all 2s ease;
+        -o-transition: all 2s ease;
+        -ms-transition: all 2s ease;
+        transition: all 2s ease;
+        animation: aboutappear;
+        animation-delay: 9s;
+        animation-duration: .25s;
+        animation-fill-mode: forwards;
+        opacity: 0%;
+        width: 200px;
+        height: 50px;
+    }
+
+}
+
+
+}

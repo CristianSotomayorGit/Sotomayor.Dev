@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\root",
+    "\\root\\css",
+    "\\root\\images",
+    "\\root\\js"
   ],
-  "SelectedNode": "\\SotomayorDev.sln",
+  "SelectedNode": "\\root\\js\\site.js",
   "PreviewInSolutionExplorer": false
 }
