@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<div class="application-main">
+	<div class="application-main centered">
 		<div class="intro">
 			<div class="container-xl-a">
 				<div class="column">
@@ -76,6 +76,13 @@
 </html>
 
 <style>
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
 	.a {
 		text-align: center;
 	}
@@ -92,18 +99,17 @@
 		overflow-x: hidden;
 		/* Hide horizontal scrollbar */
 	}
-
+/* 
 	.application-main {
 		box-sizing: border-box;
 		height: 100%;
-	}
+	} */
 
 	.container-xl-a {
 		max-width: 1000px;
 		margin-right: auto;
 		margin-left: auto;
 		#background-color: green;
-		padding-top: 10%;
 	}
 
 	.container-xl-b {
