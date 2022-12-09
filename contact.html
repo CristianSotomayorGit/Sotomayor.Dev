@@ -14,10 +14,10 @@
                         <div class="img">
                             <div class="left-menu">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="projects.html">Projects</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a class="unselected" href="index.html">Home</a></li>
+                                    <li><a class="unselected" href="about.html">About</a></li>
+                                    <li><a class="unselected" href="projects.html">Projects</a></li>
+                                    <li><a class="selected" href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -47,6 +47,12 @@
 </html>
 
 <style>
+    @keyframes slidebg {
+        to {
+            background-position: 10vw;
+        }
+    }
+
     .centered {
         position: absolute;
         top: 50%;
@@ -447,6 +453,21 @@
 
     .left-menu a {
         text-decoration: none;
+        #color: white;
+    }
+
+    .selected {
+        text-align: center;
+
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: slidebg 2s linear infinite;
+        background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+        font-weight: bolder;
+    }
+
+    .unselected {
         color: white;
     }
 </style>

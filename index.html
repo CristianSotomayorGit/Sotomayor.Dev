@@ -9,7 +9,7 @@
 	<div class="application-main centered">
 		<div class="intro">
 			<div class="container-xl-a">
-				<div class="column">
+				<div class="column-top">
 					<div class="card-top">
 						<div class="profimage">
 							<div class="img">
@@ -47,25 +47,34 @@
 		</div>
 		<div class="more-info">
 			<div class="container-xl-b">
-				<div class="column-a">
-					<div class="card-bottom-a">
-						<a class="buttontext" style="text-align: center; color: white;" href="about.html">
-							<p class="buttontext">About</p>
-						</a>
+				<div class="column-bottom">
+					<div class="card-bottom">
+						<div class="card-bottom-inside">
+							<a class="button-text-container" style="text-align: center; color: white;"
+								href="about.html">
+								<p class="buttontext">About</p>
+							</a>
+						</div>
 					</div>
 				</div>
-				<div class="column-b">
-					<div class="card-bottom-b">
-						<a class="buttontext" style="text-align: center; color: white;" href="projects.html">
-							<p class="buttontext">Projects</p>
-						</a>
+				<div class="column-bottom">
+					<div class="card-bottom">
+						<div class="card-bottom-inside">
+							<a class="button-text-container" style="text-align: center; color: white;"
+								href="projects.html">
+								<p class="buttontext">Projects</p>
+							</a>
+						</div>
 					</div>
 				</div>
-				<div class="column-c">
-					<div class="card-bottom-c">
-						<a class="buttontext" style="text-align: center; color: white;" href="contact.html">
-							<p class="buttontext">Contact</p>
-						</a>
+				<div class="column-bottom">
+					<div class="card-bottom">
+						<div class="card-bottom-inside">
+							<a class="button-text-container" style="text-align: center; color: white;"
+								href="contact.html">
+								<p class="buttontext">Contact</p>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -74,6 +83,8 @@
 </body>
 
 </html>
+
+
 
 <style>
 	.centered {
@@ -100,12 +111,6 @@
 		/* Hide horizontal scrollbar */
 	}
 
-	/* 
-	.application-main {
-		box-sizing: border-box;
-		height: 100%;
-	} */
-
 	.container-xl-a {
 		max-width: 1000px;
 		margin-right: auto;
@@ -121,26 +126,12 @@
 		display: flex;
 	}
 
-	.column {
+	.column-top {
 		padding-right: 16px !important;
 		padding-left: 16px !important;
 	}
 
-	.column-a {
-		padding-right: 16px !important;
-		padding-left: 16px !important;
-		display: flex !important;
-		width: 33.3333333339%;
-	}
-
-	.column-b {
-		padding-right: 16px !important;
-		padding-left: 16px !important;
-		display: flex !important;
-		width: 33.3333333339%;
-	}
-
-	.column-c {
+	.column-bottom {
 		padding-right: 16px !important;
 		padding-left: 16px !important;
 		display: flex !important;
@@ -150,91 +141,29 @@
 	.card-top {
 		border-radius: var(--primer-borderRadius-large, 8px) !important;
 		position: relative !important;
-		#background-color: purple;
 		display: flex !important;
 		align-items: stretch !important;
-
 		background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
-		position: absolute;
 		color: white;
-		border-radius: 8px;
 		border: solid black;
 		box-shadow: 0px 0px 60px 5px #000000;
-		#min-height: 550px;
-		/*z-index:;*/
-		-webkit-transition: all 2s ease;
-		-moz-transition: all 2s ease;
-		-o-transition: all 2s ease;
-		-ms-transition: all 2s ease;
 		transition: all 2s ease;
-
-		margin-bottom: var(--base-size-32, 32px) !important;
-
 		margin-bottom: var(--base-size-16, 16px) !important;
 	}
 
-	.card-bottom-a {
+	.card-bottom {
 		border-radius: var(--primer-borderRadius-large, 8px) !important;
 		position: relative !important;
-		background-color: purple;
 		width: 100%;
-
-		background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
-		position: absolute;
+		background-COLOR: BLACK;
 		color: white;
-		border-radius: 8px;
-		border: solid black;
 		box-shadow: 0px 0px 60px 5px #000000;
-
-		/*z-index:;*/
-		-webkit-transition: all 2s ease;
-		-moz-transition: all 2s ease;
-		-o-transition: all 2s ease;
-		-ms-transition: all 2s ease;
 		transition: all 2s ease;
+		max-height: 56px;
+		display: flex;
+
 	}
 
-	.card-bottom-b {
-		border-radius: var(--primer-borderRadius-large, 8px) !important;
-		position: relative !important;
-		background-color: purple;
-		width: 100%;
-
-		background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
-		position: absolute;
-		color: white;
-		border-radius: 8px;
-		border: solid black;
-		box-shadow: 0px 0px 60px 5px #000000;
-
-		/*z-index:;*/
-		-webkit-transition: all 2s ease;
-		-moz-transition: all 2s ease;
-		-o-transition: all 2s ease;
-		-ms-transition: all 2s ease;
-		transition: all 2s ease;
-	}
-
-	.card-bottom-c {
-		border-radius: var(--primer-borderRadius-large, 8px) !important;
-		position: relative !important;
-		background-color: purple;
-		width: 100%;
-
-		background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
-		position: absolute;
-		color: white;
-		border-radius: 8px;
-		border: solid black;
-		box-shadow: 0px 0px 60px 5px #000000;
-
-		/*z-index:;*/
-		-webkit-transition: all 2s ease;
-		-moz-transition: all 2s ease;
-		-o-transition: all 2s ease;
-		-ms-transition: all 2s ease;
-		transition: all 2s ease;
-	}
 
 	.abouttext {
 		#background-color: red;
@@ -247,13 +176,9 @@
 	}
 
 	.profimage {
-		#background-color: palevioletred;
-		padding-left: var(--base-size-64, 64px) !important;
 		padding: var(--base-size-40, 40px) !important;
-		justify-content: space-between !important;
-		flex-direction: column !important;
 		width: 33.332%;
-		border-right: 2px solid black;
+		border-right: solid black;
 	}
 
 	.img {
@@ -308,7 +233,7 @@
 		font-style: italic;
 		text-decoration: none;
 		cursor: pointer;
-		background-color: #161616;
+		background-color: #24171e;
 		border-radius: 6px;
 	}
 
@@ -321,7 +246,6 @@
 		border: 00px solid black;
 		color: white;
 		background-color: transparent;
-
 	}
 
 	.a {
@@ -358,8 +282,16 @@
 		}
 	}
 
-	.buttontext {
-		text-align: center;
+	.button-text-container {
+		text-decoration: none;
+	}
+
+	.card-bottom-inside {
+		background-color: #24171e;
+		border-radius: 6px;
+		width: 100%;
+		BORDER: solid black;
+
 	}
 
 	.about-par {
@@ -377,5 +309,28 @@
 		display: flex;
 		heigth: 20%;
 		justify-content: space-between;
+	}
+
+	.card-bottom:hover {
+		animation: slidebg 2s linear infinite;
+		background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+	}
+
+	.card-bottom-inside:hover {
+		border: 0px;
+		margin: 2px;
+
+	}
+
+
+	.buttontext:hover {
+		text-align: center;
+
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+		animation: slidebg 2s linear infinite;
+		background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+		font-weight: bolder;
 	}
 </style>
