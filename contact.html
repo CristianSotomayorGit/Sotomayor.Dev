@@ -12,7 +12,14 @@
                 <div class="card-top">
                     <div class="profimage">
                         <div class="img">
-                            <p>Contact</p>
+                            <div class="left-menu">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="projects.html">Projects</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="info">
                         </div>
@@ -41,11 +48,12 @@
 
 <style>
     .centered {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
+
     /*Text Styles*/
     .job-section {
         font-family: "Mona Sans", "Mona Sans Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -88,7 +96,7 @@
     }
 
     body {
-        background-color: #303030;
+        background-color: #4e3341;
         box-sizing: border-box;
         font-family: courier;
         height: 100%;
@@ -242,11 +250,12 @@
 
     .profimage {
         #background-color: palevioletred;
-        padding-left: var(--base-size-64, 64px) !important;
-        padding: var(--base-size-40, 40px) !important;
-        justify-content: space-between !important;
-        flex-direction: column !important;
+        #padding-left: var(--base-size-64, 64px) !important;
+        padding: 40px !important;
+
+
         width: 6.25%;
+        min-width: 77px;
         border-right: 2px solid black;
     }
 
@@ -416,5 +425,28 @@
 
     input[type=submit]:hover {
         background-color: rgb(47, 244, 255);
+    }
+
+
+
+    .left-menu {
+
+
+        width: 150px;
+        color: white;
+    }
+
+    .left-menu ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .left-menu li {
+        margin-bottom: 10px;
+    }
+
+    .left-menu a {
+        text-decoration: none;
+        color: white;
     }
 </style>
