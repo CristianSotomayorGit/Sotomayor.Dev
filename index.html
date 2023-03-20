@@ -5,15 +5,11 @@
 	<title class="title">Sotomayor.Dev</title>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-31MM69GYKK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-31MM69GYKK');
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/shaders/CopyShader.js"></script>
 
 <body>
 	<div class="application-main centered">
@@ -23,33 +19,44 @@
 					<div class="card-top">
 						<div class="profimage">
 							<div class="img">
-								<image src="images/dancing-cat.gif" class="giphy-embed"></image>
+								<canvas id="myCanvas"></canvas>
+								<script src="main.js"></script>
 							</div>
 							<div class="info">
-								<p>Cristian Sotomayor</p>
-								<p>Los Angeles, CA</p>
+								<p class="info-text-title">Info:</p>
+								<p class="info-text">Cristian Sotomayor</p>
+								<p class="info-text">Los Angeles, CA</p>
 							</div>
 						</div>
 						<div class="abouttext">
 							<div class="about-above">
-								<p class="about-par">I am a software engineer and architectural designer with two years
-									of experience developing software, and six years designing buildings. <br><br> My
-									purpose is to utilize my tech skills to catalyze the advent of automation in
-									architecture, construction and engineering.</p>
-							</div>
-							<div class="about-below">
-								<div class="resume-container">
-									<input class="resume-input" value="Email yourself my... ">
-									<button class="resume-button"><span class="a">Send ></span><span
-											class="b">Resume</span></button>
+								<p class="info-text-title">About Me:</p>
+								<p class="about-par">I'm a software engineer and architectural designer with two years
+									of experience developing software, and six years designing buildings. <br><br> I use my skills to streamline and automate workflows in the AEC industry. My specialty focus is computational geometry.</p>
+
 								</div>
-								<a href="https://github.com/CristianSotomayorGit">
-									<img src="images/github-sign.png" class="githublogo" />
-								</a>
-								<a href="https://www.linkedin.com/in/cristian-sotomayor">
-									<img src="images/linkedin-logo.png" class="linkedinlogo" />
-								</a>
-							</div>
+							<fieldset id="box">
+								<legend>Get to Know Me</legend>
+								<div class="about-below">
+								
+									
+									<div class="resume-container">
+										<button class="resume-button">
+											<a  href="contact.html" >
+												<span class="b">E-mail me</span>
+											</a>
+										</button>
+									</div>
+									
+									<a href="https://github.com/CristianSotomayorGit">
+										<img src="images/github-sign.png" class="githublogo" />
+									</a>
+
+									<a href="https://www.linkedin.com/in/cristian-sotomayor">
+										<img src="images/linkedin-logo.png" class="linkedinlogo" />
+									</a>
+								</div>
+							</fieldset>
 						</div>
 					</div>
 				</div>
@@ -62,7 +69,7 @@
 						<div class="card-bottom-inside">
 							<a class="button-text-container" style="text-align: center; color: white;"
 								href="about.html">
-								<p class="buttontext">About</p>
+								<p class="buttontext">Experience</p>
 							</a>
 						</div>
 					</div>
@@ -80,8 +87,7 @@
 				<div class="column-bottom">
 					<div class="card-bottom">
 						<div class="card-bottom-inside">
-							<a class="button-text-container" style="text-align: center; color: white;"
-								href="contact.html">
+							<a class="button-text-container" style="text-align: center; color: white;" href="contact.html">
 								<p class="buttontext">Contact</p>
 							</a>
 						</div>
@@ -92,11 +98,26 @@
 	</div>
 </body>
 
+
+
 </html>
 
-
-
 <style>
+
+	
+
+	.skills
+	{
+		margin:0;
+		color: #0ABAB5;
+	}
+
+	#myCanvas
+	{
+		max-width: 209px;
+		max-height: 273px;
+	}
+
 	.centered {
 		position: absolute;
 		top: 50%;
@@ -109,7 +130,8 @@
 	}
 
 	body {
-		background-color: #4e3341;
+		background: #121212;
+		background-color:  #121212;
 		box-sizing: border-box;
 		font-family: courier;
 		height: 100%;
@@ -153,9 +175,9 @@
 		position: relative !important;
 		display: flex !important;
 		align-items: stretch !important;
-		background: linear-gradient(0deg, #00000088 100%, #ffffff44 100%);
+		background-color: #1d1d1d;
 		color: white;
-		border: solid black;
+		border: solid #2d2d2d;
 		box-shadow: 0px 0px 60px 5px #000000;
 		transition: all 2s ease;
 		margin-bottom: var(--base-size-16, 16px) !important;
@@ -188,20 +210,34 @@
 	.profimage {
 		padding: var(--base-size-40, 40px) !important;
 		width: 33.332%;
-		border-right: solid black;
+		border-right: solid #2d2d2d;
 	}
 
-	.img {
-		height: 80%;
+
+
+	div.info {
+		height: 20%;
+		padding:10px;
+	}
+	.info-text
+	{
+		padding-top: 4px;
+		margin:0;
+		
 	}
 
-	.info {
-		height: 20%
+	.info-text-title
+	{
+		padding-bottom: 4px;
+		margin:0;
+		color:#a2a2a2;
+		font-weight: bolder;
+		font-style: italic;
 	}
 
 	.giphy-embed {
 		border-radius: 50%;
-		border: solid black;
+		border: solid #2d2d2d;
 		display: block;
 		width: 267px;
 		height: 267px;
@@ -220,21 +256,17 @@
 
 	.resume-container {
 		display: flex;
-		border: 0px solid black;
 		height: 40px;
-		#padding: 0px 25px;
 		border-radius: 8px;
 		text-align: center;
 		text-decoration: none;
 		cursor: pointer;
-		padding-left: 2px;
-		background-color: black;
+		background-color: #534a5d;
 		align-items: center;
-		width: 252px;
 	}
 
 	.resume-input {
-		width: 60%;
+		width: 125px;
 		border: 0px;
 		color: gray;
 		padding-right: 15px;
@@ -252,8 +284,8 @@
 		padding-left: 20px;
 		padding-right: 20px;
 		font-size: 16px;
-		width: 40%;
-		border: 00px solid black;
+		width: 125px;
+		border: 00px solid #534a5d;
 		color: white;
 		background-color: transparent;
 	}
@@ -261,22 +293,21 @@
 	.a {
 		display: none;
 	}
+	a {
+height: 40px;
+text-decoration: none;
+color: white;
+	}
 
 	.resume-container:hover {
-		animation: slidebg 2s linear infinite;
-		background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+		background-color: black;
+		color: white;
 	}
 
-	.resume-container:hover .b {
-		display: none;
-	}
-
-	.resume-container:hover .a {
-		display: contents;
-	}
+	
 
 	.resume-container:hover>.resume-button {
-		color: black;
+
 		cursor: pointer;
 	}
 
@@ -288,7 +319,7 @@
 
 	@keyframes slidebg {
 		to {
-			background-position: 20vw;
+			background-position: 30vw;
 		}
 	}
 
@@ -297,33 +328,75 @@
 	}
 
 	.card-bottom-inside {
-		background-color: #24171e;
+		background-color: #1d1d1d;
 		border-radius: 6px;
 		width: 100%;
-		BORDER: solid black;
+		BORDER: solid #2d2d2d;
 
 	}
 
 	.about-par {
 		text-align: left;
-		font-size: 22px !important;
+		font-size: 20px !important;
 		font-weight: 500;
 		font-family: "Mona Sans", "Mona Sans Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		margin:0;
+		padding-top:4px;
+		padding-bottom:25px;
 	}
 
 	.about-above {
-		height: 80%;
+
+	}
+
+	legend {
+		color:#bb86fc;
+		font-weight: bolder;
+		font-style: italic;
+		padding-left: 4px;
+		padding-right: 4px;
 	}
 
 	.about-below {
+		padding: 5px 30px 5px 30px;
+		width: 368px;
 		display: flex;
-		heigth: 20%;
 		justify-content: space-between;
 	}
 
+	#box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 3px solid #ff0000;
+		box-sizing: border-box;
+		animation: border-animation 2.5s infinite linear;
+		border-radius: var(--primer-borderRadius-large, 8px) !important;
+
+	} 
+
+	@keyframes border-animation {
+	0% {
+		border-color: #1d1d1d;
+	}
+	25% {
+		border-color: #BF40BF;
+	}
+	50% {
+		border-color: #1d1d1d;
+	}
+	75% {
+		border-color: #BF40BF;
+	}
+	100% {
+		border-color: #1d1d1d;
+	}
+	}
+
+
 	.card-bottom:hover {
-		animation: slidebg 2s linear infinite;
-		background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+		animation: slidebg 3s linear infinite;
+		background-image: linear-gradient(90deg, #2d2d2d 49%, #bb86fc 100%);
 	}
 
 	.card-bottom-inside:hover {
@@ -340,7 +413,7 @@
 		-webkit-background-clip: text;
 		color: transparent;
 		animation: slidebg 2s linear infinite;
-		background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+		background-image: linear-gradient(90deg, #bb86fc 0%, white 49%, white 80%, #bb86fc 100%);
 		font-weight: bolder;
 	}
 </style>
