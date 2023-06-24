@@ -1,3 +1,4 @@
+/*UNIQUE TO INDEX*/
 
 .skills
 {
@@ -31,9 +32,7 @@ body {
     width: 100%;
     position: absolute;
     overflow-y: hidden;
-    /* Hide vertical scrollbar */
     overflow-x: hidden;
-    /* Hide horizontal scrollbar */
 }
 
 .container-xl-a {
@@ -192,8 +191,6 @@ color: white;
     background-color: black;
     color: white;
 }
-
-
 
 .resume-container:hover>.resume-button {
 

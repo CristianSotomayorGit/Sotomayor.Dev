@@ -139,8 +139,6 @@ body {
 
 }
 
-
-
 .card-bottom-a {
     border-radius: var(--primer-borderRadius-large, 8px) !important;
     position: relative !important;
