@@ -3,7 +3,12 @@
 
 <head>
 	<title class="title">Sotomayor.Dev</title>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+<!-- CSS for screens that are at least 768px wide -->
+<link rel="stylesheet" type="text/css" href="css/index.css" media="screen and (min-width: 768px)">
+
+<!-- CSS for screens that are less than 768px wide -->
+<link rel="stylesheet" type="text/css" href="css/indexm.css" media="screen and (max-width: 767px)">
+
 </head>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -11,17 +16,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/postprocessing/RenderPass.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/postprocessing/ShaderPass.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/shaders/CopyShader.js"></script>
-
+<script src="js/check.js"></script>
 <body>
+
+<div id="desktop">
 	<div class="application-main centered">
 		<div class="intro">
 			<div class="container-xl-a">
 				<div class="column-top">
 					<div class="card-top">
 						<div class="profimage">
-							<div class="img">
+							<div id="dScript" class="img">
 								<canvas id="myCanvas"></canvas>
-								<script src="js/main.js"></script>
+								
 							</div>
 							<div class="info">
 								<p class="info-text-title">Info:</p>
@@ -97,5 +104,114 @@
 			</div>
 		</div>
 	</div>
+</div>
+<div id="mobile">
+	<div class="application-main centered">
+		<div class="intro">
+			<div class="container-xl-a">
+				<div class="column-top">
+					<div class="card-top">
+						<div class="profimage">
+							<div id="mScript" class="img">
+								<div class="info">
+									<p class="info-text-title">Info:</p>
+									<p class="info-text">Cristian Sotomayor</p>
+									<p class="info-text">Los Angeles, CA</p>
+								</div>
+								<canvas id="myCanvasM"></canvas>
+								<!-- <script id="mScript" src="js/mainm.js"></script> -->
+
+							</div>
+						</div>
+						<div class="abouttext">
+							<div class="about-above">
+								<p class="info-text-title">About Me:</p>
+								<p class="about-par">I'm a software engineer and architectural designer with two years
+									of experience developing software, and six years designing buildings. <br><br> I use my skills to streamline and automate workflows in the AEC industry. My specialty focus is computational geometry.</p>
+
+							</div>
+							<fieldset id="box">
+								<legend>Get to Know Me</legend>
+								<div class="about-below">
+									<div class="resume-container">
+										<button class="resume-button">
+											<a  href="contact.html" >
+												<span class="b">E-mail me</span>
+											</a>
+										</button>
+									</div>
+									
+									<a href="https://github.com/CristianSotomayorGit">
+										<img src="images/github-sign.png" class="githublogo" />
+									</a>
+
+									<a href="https://www.linkedin.com/in/cristian-sotomayor">
+										<img src="images/linkedin-logo.png" class="linkedinlogo" />
+									</a>
+								</div>
+								<div class="container-xl-b">
+									<div class="column-bottom">
+										<div class="card-bottom">
+											<div class="card-bottom-inside">
+												<a class="button-text-container" style="text-align: center; color: white;"
+													href="about.html">
+													<p class="buttontext">Experience</p>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="column-bottom">
+										<div class="card-bottom">
+											<div class="card-bottom-inside">
+												<a class="button-text-container" style="text-align: center; color: white;"
+													href="projects.html">
+													<p class="buttontext">Projects</p>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="more-info">
+			<div class="container-xl-b">
+				<div class="column-bottom">
+					<div class="card-bottom">
+						<div class="card-bottom-inside">
+							<a class="button-text-container" style="text-align: center; color: white;"
+								href="about.html">
+								<p class="buttontext">Experience</p>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="column-bottom">
+					<div class="card-bottom">
+						<div class="card-bottom-inside">
+							<a class="button-text-container" style="text-align: center; color: white;"
+								href="projects.html">
+								<p class="buttontext">Projects</p>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="column-bottom">
+					<div class="card-bottom">
+						<div class="card-bottom-inside">
+							<a class="button-text-container" style="text-align: center; color: white;" href="contact.html">
+								<p class="buttontext">Contact</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+	</div>
+</div>
 </body>
 </html>

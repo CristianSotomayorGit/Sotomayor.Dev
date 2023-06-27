@@ -1,38 +1,33 @@
 /*UNIQUE TO INDEX*/
 
-
 #desktop
-{
-    display:block;
-}
-
-#mobile
 {
     display:none;
 }
 
-.skills
+#mobile
 {
-    margin:0;
-    color: #0ABAB5;
+    display:block;
 }
+
 .skills
 {
     margin:0;
     color: #0ABAB5;
 }
 
-#myCanvas
+#myCanvasM
 {
-    max-width: 209px;
-    max-height: 273px;
+    padding-bottom: 10px;
+    /* max-width: 750px; */
+    /* max-width: 541px;  */
 }
 
 .centered {
-    position: absolute;
-    top: 50%;
+    position: relative;
+    /* top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
 }
 
 .a {
@@ -47,39 +42,41 @@ body {
     height: 100%;
     width: 100%;
     position: absolute;
-    overflow-y: hidden;
     overflow-x: hidden;
+    padding: 15px;
+margin: 0;
+font-size: ;
 }
 
 .container-xl-a {
-    max-width: 1000px;
+    /* max-width: 1000px; */
     margin-right: auto;
     margin-left: auto;
 }
 
 .container-xl-b {
-    max-width: 1000px;
+    /* max-width: 1000px; */
     margin-right: auto;
     margin-left: auto;
-    display: flex;
+    /* display: flex; */
 }
 
-.column-top {
+/* .column-top {
     padding-right: 16px !important;
     padding-left: 16px !important;
-}
+} */
 
 .column-bottom {
-    padding-right: 16px !important;
-    padding-left: 16px !important;
+
     display: flex !important;
-    width: 33.3333333339%;
+height: 60px;
+padding-top:20px;
 }
 
 .card-top {
     border-radius: var(--primer-borderRadius-large, 8px) !important;
     position: relative !important;
-    display: flex !important;
+    /* display: flex !important; */
     align-items: stretch !important;
     background-color: #1d1d1d;
     color: white;
@@ -87,6 +84,7 @@ body {
     box-shadow: 0px 0px 60px 5px #000000;
     transition: all 2s ease;
     margin-bottom: var(--base-size-16, 16px) !important;
+    padding: 20px;
 }
 
 .card-bottom {
@@ -95,27 +93,30 @@ body {
     width: 100%;
     background-COLOR: BLACK;
     color: white;
-    box-shadow: 0px 0px 60px 5px #000000;
+    /* box-shadow: 0px 0px 60px 5px #000000; */
     transition: all 2s ease;
     max-height: 56px;
     display: flex;
 
 }
 
-
+.img 
+{
+    /* display:flex; */
+}
 .abouttext {
     font-family: "Courier";
-    width: 66.666%;
-    padding-left: var(--base-size-64, 64px) !important;
-    padding: var(--base-size-40, 40px) !important;
+    /* width: 66.666%; */
+    /* padding-left: var(--base-size-64, 64px) !important;
+    padding: var(--base-size-40, 40px) !important; */
     justify-content: space-between !important;
     flex-direction: column !important;
 }
 
 .profimage {
-    padding: var(--base-size-40, 40px) !important;
-    width: 33.332%;
-    border-right: solid #2d2d2d;
+    /* padding: var(--base-size-40, 40px) !important; */
+    /* width: 33.332%; */
+    /* border-right: solid #2d2d2d; */
 }
 
 
@@ -123,12 +124,14 @@ body {
 div.info {
     height: 20%;
     padding:10px;
+    /* font-size: 30pt; */
+    padding-bottom: 10px;
+
 }
 .info-text
 {
     padding-top: 4px;
     margin:0;
-    
 }
 
 .info-text-title
@@ -239,7 +242,7 @@ color: white;
 
 .about-par {
     text-align: left;
-    font-size: 20px !important;
+    /* font-size: 20px !important; */
     font-weight: 500;
     font-family: "Mona Sans", "Mona Sans Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     margin:0;
@@ -256,21 +259,21 @@ legend {
 }
 
 .about-below {
-    padding: 5px 30px 5px 30px;
-    width: 368px;
+    /* padding: 5px 30px 5px 30px; */
+    /* width: 368px; */
     display: flex;
     justify-content: space-between;
 }
 
 #box {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     border: 3px solid #ff0000;
     box-sizing: border-box;
     animation: border-animation 2.5s infinite linear;
     border-radius: var(--primer-borderRadius-large, 8px) !important;
-
+padding:20px;
 } 
 
 @keyframes border-animation {
@@ -313,4 +316,9 @@ legend {
     animation: slidebg 2s linear infinite;
     background-image: linear-gradient(90deg, #bb86fc 0%, white 49%, white 80%, #bb86fc 100%);
     font-weight: bolder;
+}
+
+.buttontext
+{
+    margin:15px;
 }

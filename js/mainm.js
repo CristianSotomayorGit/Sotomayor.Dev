@@ -1,5 +1,5 @@
 // Select the canvas element and create a WebGLRenderer instance
-const canvas = document.querySelector('#myCanvas');
+const canvas = document.querySelector('#myCanvasM');
 const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
 
 
@@ -7,9 +7,9 @@ const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
 renderer.setClearColor(0x000000, 0);
 
 // Set up the camera with a perspective projection
-const fov = 75;
-const aspect = window.innerWidth / window.innerHeight;
-const near = 0.1;
+const fov = 63;
+const aspect = 1/1.70;
+const near = 0.02;
 const far = 1000;
 const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 camera.position.z = 5;
@@ -27,11 +27,12 @@ scene.add(platonicShape);
 // Define a function to handle window resizing
 function resizeRendererToDisplaySize(renderer) {
   const canvas = renderer.domElement;
-  const width = window.innerWidth;
-  const height = window.innerHeight;
+  const width = canvas.parentElement.clientWidth;
+  const aspectRatio = 1/1.70; // Adjust this based on your desired aspect ratio
+  const height = width * aspectRatio;
   const needResize = canvas.width !== width || canvas.height !== height;
   if (needResize) {
-    renderer.setSize(209, 273, false);
+    renderer.setSize(width, height, false);
   }
   return needResize;
 }

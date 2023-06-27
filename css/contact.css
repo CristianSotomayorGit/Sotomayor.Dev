@@ -296,6 +296,15 @@ textarea {
     text-align: right;
 } 
 
+input:focus, textarea:focus {
+    border-color: #bb86fc;
+    outline: none;
+}
+
+#email:focus {
+    border-color: #bb86fc;
+    outline: none;
+}
 input[type=email],
 select,
 textarea {
@@ -320,6 +329,7 @@ textarea {
 
 input[type=message],
 textarea {
+    resize: vertical;
     /*POSITION:;*/
     width: 100%;
     /* Full width */
