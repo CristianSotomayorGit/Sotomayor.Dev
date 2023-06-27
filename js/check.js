@@ -24,7 +24,7 @@ function checkWindowSize() {
     var width = window.innerWidth;
 
     // If the window width is 500px or less, load script1.js
-    if (width <= 768) {
+    if (width <= 999) {
         loadMScript('js/mainm.js');
     } 
     // If the window width is more than 500px, load script2.js

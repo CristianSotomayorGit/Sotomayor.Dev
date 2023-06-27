@@ -4,10 +4,10 @@
 <head>
 	<title class="title">Sotomayor.Dev</title>
 <!-- CSS for screens that are at least 768px wide -->
-<link rel="stylesheet" type="text/css" href="css/index.css" media="screen and (min-width: 768px)">
+<link rel="stylesheet" type="text/css" href="css/index.css" media="screen and (min-width: 1000px)">
 
 <!-- CSS for screens that are less than 768px wide -->
-<link rel="stylesheet" type="text/css" href="css/indexm.css" media="screen and (max-width: 767px)">
+<link rel="stylesheet" type="text/css" href="css/indexm.css" media="screen and (max-width: 999px)">
 
 </head>
 
@@ -16,6 +16,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/postprocessing/RenderPass.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/postprocessing/ShaderPass.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/shaders/CopyShader.js"></script>
+<script>
+	function loadCSS(filename){ 
+
+	   var file = document.createElement("link");
+	   file.setAttribute("rel", "stylesheet");
+	   file.setAttribute("type", "text/css");
+	   file.setAttribute("href", filename);
+	   document.head.appendChild(file);
+
+	}
+	//just call a function to load a new CSS:
+	var width = window.innerWidth;
+	if (width <= 999) {
+		loadCSS("css/indexm.css");
+	} else {
+		loadCSS("css/index.css");
+	}
+</script>
 <script src="js/check.js"></script>
 <body>
 
